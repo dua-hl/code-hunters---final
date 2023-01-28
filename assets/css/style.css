@@ -474,6 +474,10 @@ background-size: cover;
 }
 
 /* nav */
+.courses .navbar{
+    background-color:rgba(191, 186, 186, 0.1) !important;
+}
+
 .courses .nav-item:nth-of-type(1) .button-55 {
   align-self: center;
   background-color: #fff;
