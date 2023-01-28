@@ -137,6 +137,15 @@ background-size: cover;
 
 .navbar .nav-right input{
     border-color:rgb(182, 113, 143);
+    z-index: 1;
+    visibility:hidden;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.navbar .nav-right:hover input{
+    visibility:visible;
+    opacity: 1;
 }
 
 
