@@ -94,7 +94,7 @@ background-size: cover;
 .navbar .dropdownmenu{
     list-style-type: none;
     border: 2px solid white;
-    background-color:rgb(202, 141, 166);
+    background-color:rgba(173, 111, 137, 0.827);
     border-radius: .5rem;
     padding: 10px 15px;
     line-height: 1.8rem;
@@ -182,7 +182,7 @@ background-size: cover;
 }
 
 .about .abt-left button:hover{
-    border: 1px solid white;
+    border: 2px solid white;
     background-color:rgb(182, 113, 143) ;
     color: white;
     transition: .5s;
@@ -210,6 +210,7 @@ background-size: cover;
     margin: auto;  
     width: 100%;
     font-size: 2.7rem;
+    padding-bottom: 10px !important;
 }
 
 .why .why-top h3{
@@ -464,9 +465,31 @@ background-size: cover;
     cursor: pointer;
 }
 
-
-
 /* in numbers */
+
+
+/* TEAM */
+.team h2{
+    font-family: 'Lilita One', cursive;
+    color:rgb(90, 88, 88);
+    font-size: 2.7rem;
+    text-align: center;
+    padding: 60px 0 5px 0;
+}
+
+.team h3{
+    color:rgba(90, 88, 88, 0.642);  
+    margin: auto;  
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;   
+}
+
+
+/* TEAM */
+
+
+
 
 
 /* courses */
