@@ -141,6 +141,7 @@ background-size: cover;
     visibility:hidden;
     opacity: 0;
     transition: opacity .5s;
+    background-color: white !important;
 }
 
 .navbar .nav-right:hover input{
@@ -1070,3 +1071,112 @@ color:rgb(90, 88, 88);
     padding-left:70px ;
     padding-right:70px ;
   }
+
+
+  /* contact section */
+.regist{
+    margin-top:70px ;
+    background-image: url(../images/Capture-d’écran-2017-04-03-à-17.02.46.png);
+    background-position: center; 
+    background-size: cover; 
+    background-blend-mode: overlay;
+    background-color:#343a3c;
+    z-index: 2; 
+    
+}
+.regist .form-control {
+        border: transparent !important;
+        border-bottom: 1px solid rgba(148, 145, 145, 0.822) !important;
+        height: 58px !important;
+        padding-left: 0;
+        padding-right: 0;
+        display: block;
+        background: transparent !important;
+        color: white!important;
+        font-size: 16px;
+        border-radius: 0px;
+        box-shadow: none !important;
+}
+.regist .form-group .btn{
+        width:100%;
+        background: #fd5f00;
+        border: 1px solid #fd5f00;
+        color: #fff;
+}
+
+.regist .form-group .btn:hover{
+background: transparent;
+border: 1px solid #fd5f00;
+}
+.regist input::placeholder{
+    color: #FAFBFC !important;
+    opacity: 1 !important;
+
+}
+
+/* footer */
+.footer{
+    margin:50px 40px 30px 70px;
+}
+
+.footer .container{
+display: flex;
+}
+
+.footer .container .f-item {
+    width: 25%;
+    text-align: center;
+}
+
+.footer .container .f-item h3{
+    padding-top: 20px;
+    color: rgb(90, 88, 88);
+}
+
+.footer .container .f-item p{
+    width: 90%;
+    padding-top: 5px;
+    line-height: 30px;
+    color: #777;
+    font-size: 1.1rem;
+}
+
+.footer .container .f-item h3{
+padding-bottom:30px ;
+font-size:1.3rem ;
+}
+
+.footer .container .f-item .f-list-item a{
+line-height: 2.5rem;
+font-size:1.1rem ;
+color: #777;
+display: inline-block;
+}
+
+.footer .container .f-item .f-list-item a:hover{
+transform: translateX(5%);
+transition: transform .5s;
+color: rgb(99, 177, 189);
+}
+
+.footer-nav a{
+    color:#777 ;
+    border:1px solid #777;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.footer-nav a:hover{
+    background-color:rgb(182, 113, 143) ;
+    border:1px solid rgb(182, 113, 143);
+    color:white ;
+    transition: .5s;
+}
+
+.footer-nav a:hover i{
+    color: white;
+    transform: rotate(360deg);
+    transition: 1s;
+}

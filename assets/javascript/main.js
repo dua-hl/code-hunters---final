@@ -126,3 +126,71 @@ function showSlides() {
   setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 
+
+// contact us section
+var firstName=document.getElementById("firstName")
+var lastName=document.getElementById("lastName")
+var phone=document.getElementById("phone")
+var message=document.getElementById("message")
+var btn=document.getElementById("btn")
+
+//validation
+firstName.onkeyup=function(){
+    pattern=/^[A-Z][a-z]{2,10}$/
+    if(pattern.test(firstName.value)){
+        firstName.classList.remove('is-invalid')
+      firstName.classList.add('is-valid')
+    }
+    
+    else
+    {
+        firstName.classList.remove('is-invalid')
+        firstName.classList.add('is-invalid')
+    }
+}
+lastName.onkeyup=function(){
+    pattern=/^[A-Z][a-z]{2,10}$/
+    if(pattern.test(lastName.value)){
+        lastName.classList.remove('is-invalid')
+      lastName.classList.add('is-valid')
+    }
+    
+    else
+    {
+        lastName.classList.remove('is-invalid')
+        lasttName.classList.add('is-invalid')
+    }
+}
+
+phone.onkeyup=function(){
+    pattern=/^\d{10}$/
+    if(pattern.test(phone.value)){
+        phone.classList.remove('is-invalid')
+      phone.classList.add('is-valid')
+    }
+    
+    else
+    {
+        phone.classList.remove('is-invalid')
+        phone.classList.add('is-invalid')
+    }
+}
+message.onkeyup=function(){
+    pattern=/^[a-z]{2,50}$/
+    if(pattern.test(message.value)){
+        message.classList.remove('is-invalid')
+     message.classList.add('is-valid')
+    }
+    
+    else
+    {
+        message.classList.remove('is-invalid')
+        message.classList.add('is-invalid')
+    }
+}
+function clearInputs(){
+    firstNameame.value=''
+         lastName.value=''
+    phone.value=''
+    message.value=''
+}
