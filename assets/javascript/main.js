@@ -18,6 +18,82 @@
 
 // }
 
+
+// search input+button in navbar
+let searchButton=document.getElementById('searchbutton');
+let searchInput=document.getElementById('searchinput');
+let content=[];
+let included=[];
+
+let searchContent=document.querySelectorAll(".searchContent");
+let topics=document.querySelectorAll(".topics");
+let searchResult=document.getElementById('searchResult');
+let enterValue=document.getElementById('entervalue');
+let searchDiv = document.getElementById('searchdiv');
+let enterValueDiv =document.getElementById('entervaluediv');
+
+searchButton.addEventListener('click',function(){
+
+    if(searchInput.value!=''){
+        data='';
+        for(let i=0;i<searchContent.length;i++){
+            if(searchContent[i].innerHTML.includes(searchInput.value)){
+                visible()
+                included.push(searchContent[i].innerHTML);
+                display();
+            }
+        }
+        empty();
+        invisible();
+    }
+
+    else if(searchInput.value==''){
+        enterValueDiv.style.cssText="visibility:visible;";
+        searchInput.addEventListener('focus',function(){
+            enterValueDiv.style.cssText="visibility:hidden;";
+        })
+        invisible();
+    }
+})
+
+function visible(){
+    searchDiv.style.cssText="visibility:visible";
+}
+
+let contentresult =included;
+let data="";
+
+function display(){
+
+    contentresult =included;
+    data="";
+    for(let i=0;i<included.length;i++){
+
+    data+=`
+    <a href="#">
+    <div class="bg-danger rounded">
+    ${contentresult}
+    </div>
+    </a>
+    `
+    }
+    searchResult.innerHTML=data;
+}
+
+function empty(){
+    included=[];
+}
+
+function invisible(){
+    document.body.addEventListener('dblclick',function(){
+        searchDiv.style.cssText="visibility:invisible";
+        searchInput.value='';
+        enterValueDiv.style.cssText="visibility:hidden;";
+    })
+}
+
+
+// counter
 var count= document.getElementsByClassName("content");
 console.log(count);
 
@@ -76,6 +152,7 @@ function alertdisplay(){
 
     alertSection.classList.remove("visually-hidden");
     alertSection.classList.add("animate__animated","animate__heartBeat");
+
 
 }
 
@@ -194,3 +271,13 @@ function clearInputs(){
     phone.value=''
     message.value=''
 }
+
+document.getElementById("btn").addEventListener("click", function(event){
+    event.preventDefault()
+   
+    Swal.fire(
+        'Thank you!',
+        'Your message sent successfuly',
+        'success'
+      )
+  });

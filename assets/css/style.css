@@ -10,13 +10,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;400&display=swap');
+
 
 body a{
     text-decoration: none;
 }
 
 .container{
-    max-width: 1500px !important;
+    max-width: 1450px !important;
 }
 
 ul{
@@ -126,20 +128,20 @@ background-size: cover;
     top: 0;
     bottom: 0;
     right: 0;
-    z-index: 0;
     clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .navbar .nav-right a{
     font-size:1.5rem;
     z-index: 1 !important;
+    font-family: 'Francois One', sans-serif;
 }
 
 .navbar .nav-right input{
     border-color:rgb(182, 113, 143);
     z-index: 1;
-    visibility:hidden;
-    opacity: 0;
+    /* visibility:hidden; */
+    /* opacity: 0; */
     transition: opacity .5s;
     background-color: white !important;
 }
@@ -149,7 +151,66 @@ background-size: cover;
     opacity: 1;
 }
 
+.navbar .searchdiv{
+    visibility: hidden;
+}
 
+.navbar .searchResult{
+background-color: white;
+position: absolute;
+padding: 10px;
+top: 65px;
+left: -40px;
+width: 120%;
+height: 200px;
+text-align: center;
+border:2px solid rgb(182, 113, 143);
+border-radius: 10px;
+z-index: 1;
+overflow-y: scroll;
+}
+
+.navbar .searchResult-arrow::after{
+    content:'';
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    background-color: rgb(182, 113, 143);
+    top: 45px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+
+.navbar .entervaluediv{
+    visibility: hidden;
+}
+
+.navbar .entervalue{
+    background-color: white;
+    position: absolute;
+    padding: 10px;
+    top: 65px;
+    left: -40px;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    border:2px solid rgb(182, 113, 143);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.navbar .entervalue-arrow::after{
+    content:'';
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    background-color: rgb(182, 113, 143);
+    top: 45px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
 
 /* navbar */
 
@@ -157,14 +218,17 @@ background-size: cover;
 
 /* about */
 .about{
-    padding: 70px 0;
+    padding: 90px 0;
 }
-
 
 /* abt-left */
 .about .abt-left{
-    padding: 50px 0;
+    padding: 20px 0;
 }
+
+.about .abt-left h2{
+    padding-bottom: 10px !important;
+ }
 
 .about .abt-left h3{
    font-size: 1rem;
@@ -239,23 +303,23 @@ background-size: cover;
 }
 
 .why .why-item:hover:first-child{
-    background-color: rgba(122, 204, 217, 0.142);
+    background-color: rgba(122, 204, 217, 0.1);
 }
 
 .why .why-item:hover:nth-child(2){
-    background-color: rgba(255, 191, 0, 0.089);
+    background-color: rgba(255, 191, 0, 0.05);
 }
 
 .why .why-item:hover:nth-child(3){
-    background-color: rgba(128, 0, 255, 0.048);
+    background-color: rgba(128, 0, 255, 0.03);
 }
 
 .why .why-item:hover:nth-child(4){
-    background-color: rgba(235, 40, 82, 0.093);
+    background-color: rgba(235, 40, 82, 0.05);
 }
 
 .why .why-item:hover:nth-child(5){
-    background-color: rgba(81, 195, 40, 0.089);
+    background-color: rgba(81, 195, 40, 0.05);
 }
 
  .why .why-item img{
@@ -285,25 +349,25 @@ background-size: cover;
 }
 
 .why .why-item:nth-child(2) h3{
-    background: linear-gradient(0.25turn,rgb(249, 208, 83), rgb(230, 173, 0))
+    background: linear-gradient(0.25turn,rgb(247, 212, 110), rgb(230, 173, 0))
 }
 
 .why .why-item:nth-child(3) h3{
-    background: linear-gradient(0.25turn,rgb(161, 87, 236), rgb(97, 4, 191))
+    background: linear-gradient(0.25turn,rgb(169, 102, 237), rgb(97, 4, 191))
 }
 
 .why .why-item:nth-child(4) h3{
-    background: linear-gradient(0.25turn,rgb(229, 105, 131), rgb(212, 28, 68))
+    background: linear-gradient(0.25turn,rgb(232, 136, 157), rgb(212, 28, 68))
 }
 
 .why .why-item:nth-child(5) h3{
-    background: linear-gradient(0.25turn,rgb(130, 215, 100), rgb(62, 174, 21))
+    background: linear-gradient(0.25turn,rgb(166, 228, 144), rgb(62, 174, 21))
 }
 
  .why .why-item p{
     color:rgba(90, 88, 88, 0.642);  
-    font-size: .95rem;
-    letter-spacing: 1.5px;
+    font-size: 1.05rem;
+    letter-spacing: 1.1px;
      line-height: 1.5rem;
      text-align: center;
      padding: 5% 5%;
@@ -334,7 +398,7 @@ background-size: cover;
     content:'';
     position: absolute;
     top: -5px;
-    left: 120px;
+    left: 105px;
     background-color: rgba(255, 253, 253, 0.4);
     z-index: -1;
     border-radius: 50%;
@@ -371,10 +435,11 @@ background-size: cover;
     line-height: 2.3rem;
     text-align: left;
     padding-top: 10px;
+    font-family: 'Lilita One', cursive;
 }
 
  .in-numbers .no-item h4{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 4px;
      line-height: 1.5rem;
      text-align: left;
@@ -903,7 +968,74 @@ color:rgb(90, 88, 88);
     white-space: nowrap;
     word-wrap: break-word;
 }
- 
+
+.courses .button-85 {
+  padding: 0.4em 2em;
+  border: none;
+  outline: none;
+  color: rgb(185, 40, 40);
+  background: white;
+  cursor: pointer;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.courses .button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.courses .button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+
 /* courses */
 
 
