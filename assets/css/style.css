@@ -1126,12 +1126,89 @@ padding: 10px
 }
 
 .courses .courses-desc .courses-details{
-    width: 25%;
-    border: rgb(122, 204, 217) 2px solid;
-    border-radius: 10px;
+    width: 30%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     padding-bottom: 20px;
 }
+
+.courses .courses-desc .courses-details::before{
+    content: '';
+    position: absolute;
+    border-top: 5px solid rgb(122, 204, 217);
+    border-right: 5px solid rgb(122, 204, 217);
+    height: 114px;
+    width: 114px;
+    top: 0;
+    right: 0;
+}
+
+.courses .courses-desc .courses-details::after{
+    content: '';
+    position: absolute;
+    border-left: 5px solid rgb(122, 204, 217);
+    border-bottom: 5px solid rgb(122, 204, 217);
+    height: 114px;
+    width: 114px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.courses .graphic .courses-desc .courses-details::before{
+    content: '';
+    position: absolute;
+    border-top: 5px solid rgb(249, 208, 83);
+    border-right: 5px solid rgb(249, 208, 83);
+    height: 114px;
+    width: 114px;
+    top: 0;
+    right: 0;
+}
+
+.courses .graphic .courses-desc .courses-details::after{
+    content: '';
+    position: absolute;
+    border-left: 5px solid rgb(249, 208, 83);
+    border-bottom: 5px solid rgb(249, 208, 83);
+    height: 114px;
+    width: 114px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.courses .marketing .courses-desc .courses-details::before{
+    content: '';
+    position: absolute;
+    border-top: 5px solid rgb(229, 105, 131);
+    border-right: 5px solid rgb(229, 105, 131);
+    height: 114px;
+    width: 114px;
+    top: 0;
+    right: 0;
+}
+
+.courses .marketing .courses-desc .courses-details::after{
+    content: '';
+    position: absolute;
+    border-left: 5px solid rgb(229, 105, 131);
+    border-bottom: 5px solid rgb(229, 105, 131);
+    height: 114px;
+    width: 114px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.courses .web .courses-desc .courses-details{
+    border: rgb(122, 204, 217) 1px solid;
+}
+
+.courses .graphic .courses-desc .courses-details{
+    border: rgb(249, 208, 83) 1px solid;
+}
+
+.courses .marketing .courses-desc .courses-details{
+    border: rgb(229, 105, 131) 1px solid;
+}
+
 
 .courses .courses-desc .courses-details .courses-underimg{
     padding:0 15px;
@@ -1141,7 +1218,7 @@ padding: 10px
 }
 
 .courses .courses-desc .courses-details h3{
-    color:rgb(40, 38, 38);
+    color:rgb(90, 88, 88);
     font-size: 1.5rem;
 }
 
@@ -1150,7 +1227,7 @@ padding: 10px
 }
 
 .courses .courses-desc .courses-details div:last-of-type{
-    height: 10%;
+    height: fit-content;
 }
 
 .courses .courses-desc .courses-details .overly{
@@ -1265,9 +1342,9 @@ color:rgb(90, 88, 88);
 
 /* CSS */
 .button-53 {
-  background-color: white;
+  background-color: rgb(231, 61, 61);
   box-sizing: border-box;
-  color: rgb(231, 61, 61);
+  color: white;
   border:rgb(231, 61, 61) 3px solid ;
   display: flex;
   font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
@@ -1275,7 +1352,7 @@ color:rgb(90, 88, 88);
   font-weight: 500;
   justify-content: center;
   line-height: .5rem !important;
-  padding: .2rem 1.2rem !important;
+  padding: .2rem .5rem  .2rem 1.2rem!important;
   text-align: center;
   text-decoration: none #000000 solid;
   text-decoration-thickness: auto;
@@ -1285,7 +1362,10 @@ color:rgb(90, 88, 88);
   touch-action: manipulation;
   position: absolute;
   top: 10px;
-  left: -25px;
+  left: -30px;
+
+  clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
+
 
   animation-name:newbutton;
   animation-duration:.3s;
@@ -1295,7 +1375,7 @@ color:rgb(90, 88, 88);
 }
 
 .button-53 h3{
-    color: #dc3545 !important;
+    color: white !important;
     font-size: 1.3rem !important;
 }
 

@@ -202,7 +202,7 @@ seeMore.addEventListener('click',function seemore(){
     console.log('dua');
     viewAllTeam.classList.remove("visually-hidden");
     viewAllTeam.classList.add('visible');
-    viewAllTeam.style.cssText='padding-top:50px;';
+    viewAllTeam.style.cssText='padding-top:10px;';
 
 
     seeMore.classList.add('visually-hidden');
@@ -223,7 +223,6 @@ seeLess.addEventListener('click',function seeless(){
     seeLess.classList.remove("visible");
     seeLess.classList.add('visually-hidden');
 })
-
 
 
 // courses:
