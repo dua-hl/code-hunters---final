@@ -18,7 +18,6 @@
 
 // }
 
-
 // search input+button in navbar
 let searchButton=document.getElementById('searchbutton');
 let searchInput=document.getElementById('searchinput');
@@ -31,6 +30,7 @@ let searchResult=document.getElementById('searchResult');
 let enterValue=document.getElementById('entervalue');
 let searchDiv = document.getElementById('searchdiv');
 let enterValueDiv =document.getElementById('entervaluediv');
+let closesearch = document.getElementById('close');
 
 searchButton.addEventListener('click',function(){
 
@@ -50,10 +50,14 @@ searchButton.addEventListener('click',function(){
     else if(searchInput.value==''){
         enterValueDiv.style.cssText="visibility:visible;";
         searchInput.addEventListener('focus',function(){
-            enterValueDiv.style.cssText="visibility:hidden;";
+        enterValueDiv.style.cssText="visibility:hidden;";
         })
-        invisible();
+
     }
+})
+
+window.addEventListener('mousemove',function closeenterValueDiv(){
+    enterValueDiv.style.cssText="visibility:hidden;";
 })
 
 function visible(){
@@ -85,12 +89,26 @@ function empty(){
 }
 
 function invisible(){
-    document.body.addEventListener('dblclick',function(){
+    closesearch.addEventListener('click',function(){
         searchDiv.style.cssText="visibility:invisible";
         searchInput.value='';
         enterValueDiv.style.cssText="visibility:hidden;";
     })
 }
+
+// why
+let whyAnimate = document.getElementById('why-animate');
+
+window.addEventListener('scroll',function printe(){
+
+    if(window.scrollY==100){
+        whyAnimate.classList.add('animate__heartBeat');
+    }
+
+    console.log(window.scrollY)
+
+})
+
 
 
 // counter
@@ -100,17 +118,12 @@ console.log(count);
 let countt=[];
 
 for(let i=0;i<count.length;i++){
-countt.push(count[i]);
+    countt.push(count[i]);
 }
+
 console.log(countt);
 
 let index;
-
-
-setInterval(updated0,10);
-setInterval(updated1,250);
-setInterval(updated2,80);
-
 
 let upto0=0;
 let upto1=0;
@@ -141,30 +154,74 @@ function updated2(){
     }
 }
 
+    setInterval(updated0,10);
+    setInterval(updated1,250);
+    setInterval(updated2,80);
+
 
 // in-numbers:
 let alertSection = document.getElementById('alert');
 
-let stopAlert=setInterval(alertdisplay,5000);
+window.addEventListener('scroll',function display(){
 
+    if(window.scrollY==900){
+        setInterval(alertdisplay,4000);
+    }
+
+})
 
 function alertdisplay(){
 
     alertSection.classList.remove("visually-hidden");
     alertSection.classList.add("animate__animated","animate__heartBeat");
-
-
 }
 
-let closealert = document.getElementById('close');
-
-closealert.addEventListener('click', function alertremove(){
-
+document.addEventListener('dblclick',function closealert(){
     alertSection.classList.add("visually-hidden");
-    upto0=0;
-    upto1=0;
-    upto2=0;
+})
 
+
+// let closealert = document.getElementById('close');
+
+// closealert.addEventListener('click', function alertremove(){
+//     alertSection.classList.add("visually-hidden");
+//     upto0=0;
+//     upto1=0;
+//     upto2=0;
+// })
+
+// closealert.addEventListener('click', clearInterval(alertdisplay));
+
+
+// team
+let seeMore= document.getElementById("seemore");
+let seeLess= document.getElementById("seeless");
+let viewAllTeam = document.getElementById('viewteam');
+
+seeMore.addEventListener('click',function seemore(){
+    console.log('dua');
+    viewAllTeam.classList.remove("visually-hidden");
+    viewAllTeam.classList.add('visible');
+    viewAllTeam.style.cssText='padding-top:50px;';
+
+
+    seeMore.classList.add('visually-hidden');
+
+    seeLess.classList.remove("visually-hidden");
+    seeLess.classList.add('visible');
+
+})
+
+seeLess.addEventListener('click',function seeless(){
+    console.log('dua');
+    viewAllTeam.classList.remove("visible");
+    viewAllTeam.classList.add('visually-hidden');
+
+    seeMore.classList.remove("visually-hidden");
+    seeMore.classList.add('visible');
+
+    seeLess.classList.remove("visible");
+    seeLess.classList.add('visually-hidden');
 })
 
 
@@ -203,6 +260,23 @@ function showSlides() {
   setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 
+// clear
+let input1=document.getElementById('send1');
+let input2=document.getElementById('send2');
+let textarea1=document.getElementById('textarea1');
+let textarea2=document.getElementById('textarea2');
+let clear1=document.getElementById('clear1');
+let clear2=document.getElementById('clear2');
+
+clear1.addEventListener('click', function clear1(){
+    input1.value='';
+    textarea1.value='';
+})
+
+clear2.addEventListener('click', function clear2(){
+    input2.value='';
+    textarea2.value='';
+})
 
 // contact us section
 var firstName=document.getElementById("firstName")
@@ -281,3 +355,8 @@ document.getElementById("btn").addEventListener("click", function(event){
         'success'
       )
   });
+
+
+
+
+    
