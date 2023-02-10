@@ -102,7 +102,7 @@ background-size: cover;
     line-height: 1.8rem;
     visibility: hidden;
     opacity: 0;
-    width: 144px;
+    width: 160px;
     right: 0;
     position: absolute;
     transition: opacity 1s , transform 1s  ;
@@ -1106,6 +1106,38 @@ padding: 10px
     touch-action: manipulation;
 }
 
+.courses .nav-item:nth-of-type(4) .button-55 {
+    align-self: center;
+    background-color: #fff;
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid ;
+    border-color: rgb(62, 174, 21);
+    border-width: 3px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 1px 25px -18px;
+    box-sizing: border-box;
+    color: #41403e;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Neucha, sans-serif;
+    font-size: 1rem;
+    line-height: 23px;
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
 .courses .nav-item:nth-of-type(1) .button-55:hover {
   box-shadow: rgb(122, 204, 217, .5) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
@@ -1118,6 +1150,11 @@ padding: 10px
 
 .courses .nav-item:nth-of-type(3) .button-55:hover {
     box-shadow: rgba(229, 105, 131, .5) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+}  
+
+.courses .nav-item:nth-of-type(4) .button-55:hover {
+    box-shadow: rgba(62, 174, 21, 0.65) 2px 8px 8px -5px;
     transform: translate3d(0, 2px, 0);
 }  
 
@@ -1688,3 +1725,183 @@ color: rgb(99, 177, 189);
     transform: rotate(360deg);
     transition: 1s;
 }
+
+
+
+/* ****************************** */
+/* all courses page */
+.allcourses .navbar{
+    background-color: rgb(90, 88, 88);
+    margin: 0 !important;
+}
+
+.allcourses .navbar h2{
+    color: white;
+    font-family: 'Lilita One', cursive;
+}
+
+.allcourses .navbar .nav-right::after{
+    display: none;
+}
+
+.allcourses .content{
+    margin-top:50px;
+    margin-bottom:100px;
+}
+
+.allcourses .content-left{
+    border-right:2px solid rgba(48, 50, 50, 0.2);
+}
+
+.allcourses .content-left .content-item .change-co1{
+    background: linear-gradient(0.25turn,rgba(122, 204, 217), rgb(55, 133, 145));
+    border-radius: 5px;
+    line-height: 40px;
+    margin-right: 25px;
+    padding-left: 10px;
+}
+
+.allcourses .content-left .content-item .change-co2{
+    background: linear-gradient(0.25turn,rgb(247, 212, 110), rgb(230, 173, 0));    
+    border-radius: 5px;
+    line-height: 40px;
+    margin-right: 25px;
+    padding-left: 10px;
+}
+
+.allcourses .content-left .content-item .change-co3{
+    background: linear-gradient(0.25turn,rgb(232, 136, 157), rgb(212, 28, 68));
+    border-radius: 5px;
+    line-height: 40px;
+    margin-right: 25px;
+    padding-left: 10px;
+}
+
+.allcourses .content-left .content-item{
+    margin: 30px 0;
+    padding-bottom:20px;
+}
+
+.allcourses .content-left .content-item a{
+    color:white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.allcourses .content-left .content-item .dropdown{
+padding-top: 15px;
+}
+
+.allcourses .content-left .content-item .dropdown a{
+    color:rgba(90, 88, 88,.7);
+    font-size: 1.1rem;
+    padding-top: 5px;
+}
+
+.allcourses .webdesign .content-right-item{
+    border:2px solid rgb(152, 206, 214);
+    margin:10px 30px 20px 30px;
+    padding:0px 30px !important;
+    border-radius: 20px;
+    width: 78%;
+}
+
+.allcourses .content-right-item h3{
+    color:rgb(90, 88, 88);
+}
+
+.allcourses .content-right-item h3 img{
+    padding-left: 7px;
+    width: 5%;
+    animation-name: newbutton;
+    animation-duration: .3s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+.allcourses .content-right-item p{
+    color: rgba(90, 88, 88,.8);
+    width: 90%;
+    padding-top: 10px;
+}
+
+.allcourses .button-53 {
+    background-color: rgb(231, 61, 61);
+    box-sizing: border-box;
+    color: white;
+    border:rgb(231, 61, 61) 3px solid ;
+    display: flex;
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem !important;
+    font-weight: 500;
+    justify-content: center;
+    line-height: .5rem !important;
+    padding: .2rem .5rem  .2rem 1.2rem!important;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    position: abdolute;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    position: absolute;
+    top: 100px;
+    left: -30px;
+  
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
+  
+  
+    animation-name:newbutton;
+    animation-duration:.3s;
+    animation-direction:alternate-reverse;
+    animation-iteration-count: infinite;
+    
+}
+
+.allcourses .webdesign .content-right-item i{
+    color:rgb(111, 175, 185);
+    
+}
+
+.allcourses .webdesign .content-right-item span{
+    color:rgb(90, 88, 88);
+    
+}
+
+.allcourses .graphicdesig .content-right-item{
+    border:2px solid rgb(249, 208, 83);
+    margin:10px 30px 20px 30px;
+    padding:0px 30px !important;
+    border-radius: 20px;
+    width: 78%;
+}
+
+.allcourses .graphicdesig .content-right-item i{
+    color:rgb(249, 208, 83);
+    
+}
+
+.allcourses .graphicdesig .content-right-item span{
+    color:rgb(90, 88, 88);
+    
+}
+
+.allcourses .marketing .content-right-item{
+    border:2px solid rgb(229, 105, 131);
+    margin:10px 30px 20px 30px;
+    padding:0px 30px !important;
+    border-radius: 20px;
+    width: 78%;
+}
+
+.allcourses .marketing .content-right-item i{
+    color:rgb(229, 105, 131);
+    
+}
+
+.allcourses .marketing .content-right-item span{
+    color:rgb(90, 88, 88);
+    
+}
+
+
