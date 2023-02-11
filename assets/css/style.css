@@ -1740,6 +1740,12 @@ color: rgb(99, 177, 189);
     font-family: 'Lilita One', cursive;
 }
 
+.allcourses .nav-item a{
+    color: white;
+    font-family: 'Lilita One', cursive;
+    font-size: 1.5rem;
+}
+
 .allcourses .navbar .nav-right::after{
     display: none;
 }
@@ -1806,11 +1812,18 @@ padding-top: 15px;
     width: 78%;
 }
 
-.allcourses .content-right-item h3{
-    color:rgb(90, 88, 88);
+
+.allcourses .content-right-item .neworlaunched .Launched {
+visibility: hidden;
 }
 
-.allcourses .content-right-item h3 img{
+.allcourses .content-right-item a{
+    color:rgb(90, 88, 88);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.allcourses .content-right-item a img{
     padding-left: 7px;
     width: 5%;
     animation-name: newbutton;
@@ -1904,4 +1917,22 @@ padding-top: 15px;
     
 }
 
+.allcourses .carouselpages{
+    width: 81%;
+    border:none;
+    text-align: right;
+}
 
+.allcourses .carouselpages button{
+color: white;
+background-color: rgba(90, 88, 88, 0.8);
+border: none;
+border-radius: 5px;
+margin: 7px;
+}
+
+.allcourses .carouselpages button h5{
+ font-size:.9rem;
+ padding: 3px 5px;
+
+}
