@@ -229,6 +229,67 @@ overflow-y: scroll;
 
 /* navbar */
 
+
+/* window */ 
+.window{
+    position: absolute;
+    top: 15%;
+    margin:0 400px ;
+}
+
+.window-content{
+    background-image:url(../images/window3.jpg);
+    background-size: cover;
+    background-position: 50%;
+    background-color: rgb(28, 29, 29);
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    border-radius: 80px;
+    height: 625px;
+    overflow:hidden;
+
+}
+
+@keyframes scaling{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.window-content{
+     box-shadow: rgba(143, 37, 97, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; 
+}
+.window-content h1{
+    font-size: 30px bold;
+}
+.window-content p{
+    font-size: 17px;
+    font-weight: 500;
+    margin: auto;
+}
+
+.window-content .window-content-top{
+    height: 90%;
+}
+
+.window-content .window-content-bottom{
+    height: 10%;
+}
+
+.all-bg-window{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(43, 51, 51, 0.95); 
+    background-blend-mode: soft-light;
+}
+
+/* window */
+
+
 /* ******************** */
 
 /* about */
@@ -1936,3 +1997,9 @@ margin: 7px;
  padding: 3px 5px;
 
 }
+
+
+/* *********************************************** */
+
+  
+

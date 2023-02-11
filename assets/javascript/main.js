@@ -96,6 +96,44 @@ function invisible(){
     })
 }
 
+
+// ***************
+// window
+let start=document.getElementById('start');
+let concept=document.getElementById('concept');
+let vision=document.getElementById('vision');
+let windowContent=document.querySelectorAll('.window-content');
+let about = document.querySelectorAll('.about-item');
+let closeWindow = document.querySelectorAll('.close')
+let allBgWindow=document.getElementById('all-bg-window');
+let navbar=document.getElementById('navbar');
+let windowHeader=document.getElementById('window-header');
+
+
+for(let i=0;i<windowContent.length;i++){
+
+    about[i].addEventListener('click',function(){
+        navbar.style.cssText='opacity:0';
+        windowHeader.style.cssText='visibility:hidden';
+        windowContent[i].classList.remove('visually-hidden');
+        windowContent[i].style.cssText='animation-name: scaling;animation-duration: .7s;';
+        allBgWindow.classList.remove('visually-hidden');
+    }) 
+
+    closeWindow[i].addEventListener('click',function(){
+        navbar.style.cssText='opacity:1';
+        windowHeader.style.cssText='visibility:visibile';
+        windowContent[i].style.cssText='animation-name: none;';
+        windowContent[i].classList.add('visually-hidden');
+        allBgWindow.classList.add('visually-hidden');
+
+    }) 
+
+}
+
+
+
+
 // why
 let whyAnimate = document.getElementById('why-animate');
 
@@ -278,15 +316,16 @@ clear2.addEventListener('click', function clear2(){
 })
 
 // contact us section
+// contact us section
 var firstName=document.getElementById("firstName")
 var lastName=document.getElementById("lastName")
 var phone=document.getElementById("phone")
 var message=document.getElementById("message")
-var btn=document.getElementById("btn")
+
 
 //validation
 firstName.onkeyup=function(){
-    pattern=/^[A-Z][a-z]{2,10}$/
+    pattern=/^[a-zA-Z]{2,10}$/
     if(pattern.test(firstName.value)){
         firstName.classList.remove('is-invalid')
       firstName.classList.add('is-valid')
@@ -294,12 +333,12 @@ firstName.onkeyup=function(){
     
     else
     {
-        firstName.classList.remove('is-invalid')
+        firstName.classList.remove('is-valid')
         firstName.classList.add('is-invalid')
     }
 }
 lastName.onkeyup=function(){
-    pattern=/^[A-Z][a-z]{2,10}$/
+    pattern=/^[a-zA-Z]{2,10}$/
     if(pattern.test(lastName.value)){
         lastName.classList.remove('is-invalid')
       lastName.classList.add('is-valid')
@@ -307,8 +346,8 @@ lastName.onkeyup=function(){
     
     else
     {
-        lastName.classList.remove('is-invalid')
-        lasttName.classList.add('is-invalid')
+        lastName.classList.remove('is-valid')
+        lastName.classList.add('is-invalid')
     }
 }
 
@@ -321,7 +360,7 @@ phone.onkeyup=function(){
     
     else
     {
-        phone.classList.remove('is-invalid')
+        phone.classList.remove('is-valid')
         phone.classList.add('is-invalid')
     }
 }
@@ -334,27 +373,24 @@ message.onkeyup=function(){
     
     else
     {
-        message.classList.remove('is-invalid')
+        message.classList.remove('is-valid')
         message.classList.add('is-invalid')
     }
 }
-function clearInputs(){
-    firstNameame.value=''
-         lastName.value=''
-    phone.value=''
-    message.value=''
-}
+
 
 document.getElementById("btn").addEventListener("click", function(event){
     event.preventDefault()
-   
+    firstName.value=''
+    lastName.value=''
+phone.value=''
+message.value=''
     Swal.fire(
         'Thank you!',
         'Your message sent successfuly',
         'success'
       )
   });
-
 
 
 // **********
