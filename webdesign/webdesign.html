@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web design</title>
+
+    <link rel="stylesheet" href="../vendor/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.1/sweetalert2.min.css" integrity="sha512-NvuRGlPf6cHpxQqBGnPe7fPoACpyrjhlSNeXVUY7BZAj1nNhuNpRBq3osC4yr2vswUEuHq2HtCsY2vfLNCndYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="allcourses">
+    <nav class=" navbar navbar-expand-lg my-4" id="navbar">
+        <div class="container">
+          <div class="collapse navbar-collapse py-2 d-flex" id="navbarSupportedContent">
+            <div class="nav-left col-10">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3 ps-4 animate__animated animate__fadeIn">
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page" href="file:///C:/Users/SYSCOM/Desktop/courses/full%20stack/front%20end%20project/index.html#">Home</a>
+              </li>
+
+              <li class="m-auto">
+                <h2  id="titelofnav">All Courses</h2>
+              </li>
+            </ul>
+            </div>
+
+            <div class="nav-right col-2 text-end">
+            <form role="search" class="d-flex position-relative">
+                <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search" id="searchinput">
+                <a href="#" class=" position-relative" id="searchbutton">Search</a>
+                
+                <div id="searchdiv" class="searchdiv">
+                <div id="searchResult" class="searchResult">
+                </div>
+                <div class="closesearchresult" id="close">
+                  <a><i class="fa-regular fa-circle-xmark position-fixed"></i></a> 
+                </div>
+                <div class="searchResult-arrow" id="searchResult-arrow"></div>
+                </div>
+
+                <div class="entervaluediv" id="entervaluediv">
+                <div id="entervalue" class=" entervalue">Enter a topic to search about</div>
+                <div class="entervalue-arrow" id="entervalue-arrow"></div>
+              </div>  
+            </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+<!-- content -->
+<div class="content">
+<div class="container">
+
+    <div class="d-flex">
+    <div class="content-left col-2">
+      <ul class="content-list">
+        <li class="content-item">
+            <div class="change-co1 titlte-ofcourses"> 
+            <a href="http://127.0.0.1:5500/webdesign/webdesign.html" class="p-2 links">Web Design</a>
+            </div>
+            <ul class="dropdown">
+                <a href="http://127.0.0.1:5500/webdesign/webnew.html" class="course-branch links"><li>New courses</li></a>
+                <a href="http://127.0.0.1:5500/webdesign/weblaunched.html" class="course-branch links"><li>Launched courses</li></a>
+            </ul>
+        </li>
+
+        <li class="content-item">
+            <div class="change-co2 titlte-ofcourses"> 
+            <a href="http://127.0.0.1:5500/graphic%20design/graphicdesign.html" class="p-2 links">Graphic Design</a>
+            </div>
+            <ul class="dropdown">
+                <a href="http://127.0.0.1:5500/graphic%20design/graphicnew.html" class="course-branch links" ><li>New courses</li></a>
+                <a href="http://127.0.0.1:5500/graphic%20design/graphiclaunched.html" class="course-branch links"><li>Launched courses</li></a>
+            </ul>
+        </li>
+
+        <li class="content-item">
+            <div class="change-co3 titlte-ofcourses"> 
+            <a href="http://127.0.0.1:5500/marketing/marketing.html" class="p-2 links">Marketing</a>
+            </div>
+            <ul class="dropdown" >
+                <a href="http://127.0.0.1:5500/marketing/marketingnew.html" class="course-branch links"><li>New courses</li></a>
+                <a href="http://127.0.0.1:5500/marketing/marketinglaunched.html" class="course-branch links"><li>Launched courses</li></a>
+            </ul>
+        </li>
+    </ul>
+    </div>
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carouselpages"  id="carouselpoints">
+
+      </div>
+
+      <div class="allpages carousel-inner" id="allpages">
+
+      </div>
+
+    </div>
+
+      
+    </div>
+    </div>
+    
+    </div>
+ 
+    </div>
+
+<!-- footer -->
+<div class="footer topics" id="footer">
+    <div class="container">
+    
+    <div class="f-item d-flex">
+    <div class="col-3">
+    <a href="#">
+    <img src="../assets/images/logo.png" alt="logo" class="w-100">
+    </a>
+    </div> 
+
+    <div class="col-9">
+    <h3 class="text-start searchContent">Knowledge Academy</h3>
+    <p class="text-start searchContent">Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
+    <div>
+      <ul class="nav gap-4 footer-nav">
+        <li class="nav-item">
+          <a class="d-flex justify-content-center align-items-center" aria-current="page" href="https://www.facebook.com/eknowledge.learn/">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        </li>
+        <li class="nav-item">
+          <a target="blank" class="d-flex justify-content-center align-items-center" href="mailto:Knowledgeacademy@gmail.com"><i class="fa-brands fa-at"></i></a>
+        </li>
+        <li class="nav-item">
+          <a target="blank" class="d-flex justify-content-center align-items-center" href="tel:0592100103"><i class="fa-solid fa-phone"></i></a>
+        </li>
+        <li class="nav-item">
+          <a target="blank" class="d-flex justify-content-center align-items-center" href="https://wa.me/+970592100103"><i class="fa-brands fa-whatsapp"></i></a>
+          </li>
+    </ul>
+
+   </div>
+    </div>
+
+    </div>
+    
+    <div class="f-item">
+    <h3 class="searchContent">Quick Links</h3>
+    <ul>
+    <li class="f-list-item">
+        <a href="#courses" class="searchContent">All courses</a>
+    </li>
+    
+    <li class="f-list-item">
+        <a href="#" class="searchContent">About us</a>
+    </li>
+    
+    <li class="f-list-item">
+        <a href="#team" class="searchContent">Our team</a>
+    </li>
+
+    </ul>
+    </div>
+    
+    <div class="f-item">
+        <h3 class="searchContent">Programs</h3>
+        <ul>
+        <li class="f-list-item">
+            <a href="https://code.visualstudio.com/" class="searchContent">Visual Studio Code</a>
+        </li>
+        
+        <li class="f-list-item">
+            <a href="https://visualstudio.microsoft.com/free-developer-offers/" class="searchContent">Visual Studio</a>
+        </li>
+        
+        <li class="f-list-item">
+            <a href="https://sourceforge.net/projects/codeblocks/" class="searchContent">Code blocks</a>
+        </li>
+        
+        </ul>
+    </div>
+    
+    <div class="f-item">
+        <h3 class="searchContent">Support</h3>
+        <ul>
+        <li class="f-list-item">
+            <a href="#" class="searchContent">Frequently Asked Questions</a>
+        </li>
+        
+        <li class="f-list-item">
+            <a href="#" class="searchContent">Terms &amp; Conditions</a>
+        </li>
+
+        <li class="f-list-item">
+          <a href="#" class="searchContent">Privacy Policy</a>
+        </li>
+         
+        </ul>
+    </div>
+    
+    </div>
+    
+  </div>
+<!-- footer -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.1/sweetalert2.all.min.js" integrity="sha512-KfbhdnXs2iEeelTjRJ+QWO9veR3rm6BocSoNoZ4bpPIZCsE1ysIRHwV80yazSHKmX99DM0nzjoCZjsjNDE628w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./webdesign.js" type="module"></script>
+</body>
+</html>

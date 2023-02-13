@@ -1,24 +1,11 @@
 let contentItem=document.querySelectorAll('.content-item');
 let dropdown=document.querySelectorAll('.dropdown');
 
-console.log(dropdown);
-
-for (let i=0;i<contentItem.length;i++){
-    contentItem[i].addEventListener('click',function(e){
-        e.preventDefault();
-    dropdown[i].classList.remove('visually-hidden');
-
-    })
-}
-
 
 let titelNav = document.getElementById('titelofnav');
 let  titlteCourses = document.querySelectorAll('.titlte-ofcourses');
-let  courseBranch = document.querySelectorAll('.course-branch');
-let contentRight=document.getElementById('content-right');
-let webdesignHtml=document.getElementById('webdesign');
-let graphicdesigHtml=document.getElementById('graphicdesig');
-let marketingHtml=document.getElementById('marketing');
+let navbar=document.getElementById('navbar');
+let links=document.querySelectorAll('.links');
 
 let allcourses =[
 
@@ -175,39 +162,39 @@ let marketing=[];
 let marketingNew=[];
 let marketingLaunched=[];
 
-let allNewCourses=[];
+function categories(){
+    for(let i=0;i<allcourses.length;i++){
 
-
-for(let i=0;i<allcourses.length;i++){
-
-    if(allcourses[i].courseCategory=="webdesign"){
-        webDesign.push(allcourses[i]);
-    }else if(allcourses[i].courseCategory=="graphicdesig"){
-        graphicDesign.push(allcourses[i]);
-    }
-    else if(allcourses[i].courseCategory=="marketing"){
-        marketing.push(allcourses[i]);
-    }
-
-    if(allcourses[i].courseCategory=="webdesign" && allcourses[i].courseStart=="new"){
-        webDesignNew.push(allcourses[i]);
-    }else if(allcourses[i].courseCategory=="webdesign" && allcourses[i].courseStart=="Launched"){
-        webDesignLaunched.push(allcourses[i]);
-    }
-
-    if(allcourses[i].courseCategory=="graphicdesig" && allcourses[i].courseStart=="new"){
-        graphicDesignNew.push(allcourses[i]);
-    }else if(allcourses[i].courseCategory=="graphicdesig" && allcourses[i].courseStart=="Launched"){
-        graphicDesignLaunched.push(allcourses[i]);
-    }
-
-    if(allcourses[i].courseCategory=="marketing" && allcourses[i].courseStart=="new"){
-        marketingNew.push(allcourses[i]);
-    }else if(allcourses[i].courseCategory=="marketing" && allcourses[i].courseStart=="Launched"){
-        marketingLaunched.push(allcourses[i]);
+        if(allcourses[i].courseCategory=="webdesign"){
+            webDesign.push(allcourses[i]);
+        }else if(allcourses[i].courseCategory=="graphicdesig"){
+            graphicDesign.push(allcourses[i]);
+        }
+        else if(allcourses[i].courseCategory=="marketing"){
+            marketing.push(allcourses[i]);
+        }
+    
+        if(allcourses[i].courseCategory=="webdesign" && allcourses[i].courseStart=="new"){
+            webDesignNew.push(allcourses[i]);
+        }else if(allcourses[i].courseCategory=="webdesign" && allcourses[i].courseStart=="Launched"){
+            webDesignLaunched.push(allcourses[i]);
+        }
+    
+        if(allcourses[i].courseCategory=="graphicdesig" && allcourses[i].courseStart=="new"){
+            graphicDesignNew.push(allcourses[i]);
+        }else if(allcourses[i].courseCategory=="graphicdesig" && allcourses[i].courseStart=="Launched"){
+            graphicDesignLaunched.push(allcourses[i]);
+        }
+    
+        if(allcourses[i].courseCategory=="marketing" && allcourses[i].courseStart=="new"){
+            marketingNew.push(allcourses[i]);
+        }else if(allcourses[i].courseCategory=="marketing" && allcourses[i].courseStart=="Launched"){
+            marketingLaunched.push(allcourses[i]);
+        }
     }
 }
 
+let courseBranch= document.querySelectorAll('course-branch');
 let carouselPoints=document.getElementById("carouselpoints");
 let allPages=document.getElementById("allpages");
 let points='';
@@ -216,179 +203,9 @@ let from=0;
 let to=5;
 let pagesContentItem='';
 
-if(titelNav.innerHTML=='All Courses'){
-    empty();
-    allCoursesF();
-}
-
-for(let i=0;i<titlteCourses.length;i++){
-
-    titlteCourses[i].addEventListener('click',function(){
-    titelNav.innerHTML=titlteCourses[i].innerText;
-
-    if(titelNav.innerHTML=='All Courses'){
-        empty();
-   
-       for(let i=0;i<(allcourses.length/5)-1;i++){
-   
-           points+=`
-           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i+1}"><h5>Page ${i+2}</h5></button>
-           `
-           }
-           
-           carouselPoints.innerHTML=`<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
-           
-   
-           for(let i=0;i<(allcourses.length/5)-1;i++){
-               pagesContent+=`
-               <div class="pages carousel-item" id="slide${i+1}">
-           
-           
-               </div>
-           `
-           }
-   
-           allPages.innerHTML=`<div class="pages carousel-item active" id="slide0"></div>` + pagesContent;
-   
-           let pagesClass=document.querySelectorAll('.pages');
-   
-   
-   for(let i=0;i<(allcourses.length/5);i++){
-   
-       pagesContentItem='';
-       for(let j=from;j<to;j++){
-           if(j>allcourses.length-1){
-               break;
-           }
-   
-           pagesContentItem+=`
-           <div class="${allcourses[j].courseCategory}" id="${allcourses[j].courseCategory}">
-           <div class="content-right-item">
-           <div class="py-3">
-           <a href="" class="searchContent neworlaunched" id="coursename">${allcourses[j].courseName}<span class="${allcourses[j].courseStart}"> <img src="assets/images/new.png" alt="new"></span></a>
-           <p class="searchContent" id="coursecaption">${allcourses[j].courseCaption}</p>
-           </div>
-   
-           <div class="border-top">
-               <div>
-                   <div class="d-flex py-3 px-2" id="bordertop">
-                       <div class="col-4 px-2">
-                           <i class="fa-solid fa-chalkboard-user icon"></i>                            
-                           <span class="ps-2" id="coursetrainer">${allcourses[j].courseTrainer}</span>
-                       </div>
-   
-                       <div class="col-3 text-end px-2">
-                           <i class="fa-solid fa-sack-dollar icon"></i>                            
-                           <span class="ps-2" id="courseprice">${allcourses[j].coursePrice}</span>
-                       </div>
-       
-                       <div class="col-5 text-end px-2">
-                           <i class="fa-regular fa-calendar-days icon"></i>
-                           <span class="ps-2" id="coursetime">${allcourses[j].courseTime}</span>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-       </div> 
-   
-           `;
-   
-   
-   
-       }
-   
-       pagesClass[i].innerHTML=pagesContentItem;
-   
-   
-   
-   
-   from+=5;
-   to+=5;
-   
-   
-   
-   
-   // console.log(pagesClass[i].innerHTML);
-   
-   }
-   }
-   
-   
-   if(titelNav.innerHTML=='Web Design'){
-   
-       empty();
-       webDesignF();
-      
-   }
-
-   if(titelNav.innerHTML=='Graphic Design'){
-   
-    empty();
-    graphicDesignF()
-    
-}
-
-if(titelNav.innerHTML=='Marketing'){
-   
-    empty();
-    marketingF()
-    
-}
-
-})
-
-}
-
-for(let j=0;j<courseBranch.length;j++){
-    courseBranch[j].addEventListener('click',function(){
-    if(j<2){
-        titelNav.innerText=`Web Design - ${courseBranch[j].innerText} `;
-
-
-    }    
-
-    else if(j<4){
-        titelNav.innerText=`Graphic Design - ${courseBranch[j].innerText} `;
-    }  
-
-    else if(j<6){
-        titelNav.innerText=`Marketing - ${courseBranch[j].innerText} `;
-    }
-     
-    if(titelNav.innerText=='Web Design - New courses'){       
-            empty();
-            webDesignNewF();         
-    }
-
-    else if(titelNav.innerText=='Web Design - Launched courses'){
-        empty();
-        webDesignLaunchedF();    
-    }
-
-    else if(titelNav.innerText=='Graphic Design - New courses'){
-        empty();
-        graphicDesignNewF();    
-    }
-    else if(titelNav.innerText=='Graphic Design - Launched courses'){
-        empty();
-        graphicDesignLaunchedF();
-    }
-
-    else if(titelNav.innerText=='Marketing - New courses'){
-        empty();
-        marketingNewF();  
-    }
-    else if(titelNav.innerText=='Marketing - Launched courses'){
-        empty();
-        marketingLaunchedF();  
-    }
-
-
-})
-}
-
 function allCoursesF(){
+    navbar.style.cssText="background-color: rgb(90, 88, 88);";
+
     for(let i=0;i<(allcourses.length/5)-1;i++){
 
         points+=`
@@ -425,7 +242,7 @@ function allCoursesF(){
         <div class="${allcourses[j].courseCategory}" id="${allcourses[j].courseCategory}">
         <div class="content-right-item">
         <div class="py-3">
-        <a href="" class="searchContent neworlaunched" id="coursename">${allcourses[j].courseName}<span class="${allcourses[j].courseStart}"> <img src="assets/images/new.png" alt="new"></span></a>
+        <a href="" class="searchContent neworlaunched" id="coursename">${allcourses[j].courseName}<span class="${allcourses[j].courseStart}"></span></a>
         <p class="searchContent" id="coursecaption">${allcourses[j].courseCaption}</p>
         </div>
  
@@ -465,17 +282,13 @@ function allCoursesF(){
  
  from+=5;
  to+=5;
- 
- 
- 
- 
- // console.log(pagesClass[i].innerHTML);
- 
  }
 }
 
 
 function webDesignF(){
+    navbar.style.cssText="background-color: rgb(113, 168, 177);";
+
     for(let i=0;i<((webDesign.length/5))-1;i++){
    
         points+=`
@@ -511,7 +324,7 @@ function webDesignF(){
         <div class="${webDesign[j].courseCategory}" id="${webDesign[j].courseCategory}">
         <div class="content-right-item">
         <div class="py-3">
-        <a href="" class="searchContent neworlaunched" id="coursename">${webDesign[j].courseName}<span class="${webDesign[j].courseStart}"> <img src="assets/images/new.png" alt="new"></span></a>
+        <a href="" class="searchContent neworlaunched" id="coursename">${webDesign[j].courseName}<span class="${webDesign[j].courseStart}"></span></a>
         <p class="searchContent" id="coursecaption">${webDesign[j].courseCaption}</p>
         </div>
 
@@ -559,6 +372,8 @@ to+=5;
 }
 
 function webDesignNewF(){
+    navbar.style.cssText="background-color: rgb(113, 168, 177);";
+
     for(let i=0;i<((webDesignNew.length/5))-1;i++){
         
         points+=`
@@ -594,7 +409,7 @@ function webDesignNewF(){
         <div class="${webDesignNew[j].courseCategory}" id="${webDesignNew[j].courseCategory}">
         <div class="content-right-item">
         <div class="py-3">
-        <a href="" class="searchContent neworlaunched" id="coursename">${webDesignNew[j].courseName}<span class="${webDesignNew[j].courseStart}"> <img src="assets/images/new.png" alt="new"></span></a>
+        <a href="" class="searchContent neworlaunched" id="coursename">${webDesignNew[j].courseName}<span class="${webDesignNew[j].courseStart}"></span></a>
         <p class="searchContent" id="coursecaption">${webDesignNew[j].courseCaption}</p>
         </div>
 
@@ -642,6 +457,8 @@ to+=5;
 }
 
 function webDesignLaunchedF(){
+    navbar.style.cssText="background-color: rgb(113, 168, 177);";
+
     for(let i=0;i<((webDesignLaunched.length/5))-1;i++){
     
         points+=`
@@ -677,7 +494,7 @@ function webDesignLaunchedF(){
         <div class="${webDesignLaunched[j].courseCategory}" id="${webDesignLaunched[j].courseCategory}">
         <div class="content-right-item">
         <div class="py-3">
-        <a href="" class="searchContent neworlaunched" id="coursename">${webDesignLaunched[j].courseName}<span class="${webDesignLaunched[j].courseStart}"> <img src="assets/images/new.png" alt="new"></span></a>
+        <a href="" class="searchContent neworlaunched" id="coursename">${webDesignLaunched[j].courseName}<span class="${webDesignLaunched[j].courseStart}"></span></a>
         <p class="searchContent" id="coursecaption">${webDesignLaunched[j].courseCaption}</p>
         </div>
 
@@ -725,6 +542,8 @@ to+=5;
 }
 
 function graphicDesignF(){
+    navbar.style.cssText="background-color:rgb(238, 191, 49);";
+
     for(let i=0;i<((graphicDesign.length/5))-1;i++){
 
         points+=`
@@ -760,7 +579,7 @@ function graphicDesignF(){
         <div class="${graphicDesign[j].courseCategory}" id="${graphicDesign[j].courseCategory}">
         <div class="content-right-item">
         <div class="py-3">
-        <a href="" class="searchContent neworlaunched" id="coursename">${graphicDesign[j].courseName}<span class="${graphicDesign[j].courseStart}"> <img src="assets/images/new.png" alt="new"></span></a>
+        <a href="" class="searchContent neworlaunched" id="coursename">${graphicDesign[j].courseName}<span class="${graphicDesign[j].courseStart}"></span></a>
         <p class="searchContent" id="coursecaption">${graphicDesign[j].courseCaption}</p>
         </div>
 
@@ -808,7 +627,8 @@ to+=5;
 }
 
 function graphicDesignNewF(){
-     
+    navbar.style.cssText="background-color:rgb(238, 191, 49);";
+
     for(let i=0;i<((graphicDesignNew.length/5))-1;i++){
     
         points+=`
@@ -844,7 +664,7 @@ function graphicDesignNewF(){
         <div class="${graphicDesignNew[j].courseCategory}" id="${graphicDesignNew[j].courseCategory}">
         <div class="content-right-item">
         <div class="py-3">
-        <a href="" class="searchContent neworlaunched" id="coursename">${graphicDesignNew[j].courseName}<span class="${graphicDesignNew[j].courseStart}"> <img src="assets/images/new.png" alt="new"></span></a>
+        <a href="" class="searchContent neworlaunched" id="coursename">${graphicDesignNew[j].courseName}<span class="${graphicDesignNew[j].courseStart}"></span></a>
         <p class="searchContent" id="coursecaption">${graphicDesignNew[j].courseCaption}</p>
         </div>
 
@@ -894,6 +714,8 @@ to+=5;
 }
 
 function graphicDesignLaunchedF(){
+    navbar.style.cssText="background-color:rgb(238, 191, 49);";
+
     for(let i=0;i<((graphicDesignLaunched.length/5))-1;i++){
     
         points+=`
@@ -929,7 +751,7 @@ function graphicDesignLaunchedF(){
         <div class="${graphicDesignLaunched[j].courseCategory}" id="${graphicDesignLaunched[j].courseCategory}">
         <div class="content-right-item">
         <div class="py-3">
-        <a href="" class="searchContent neworlaunched" id="coursename">${graphicDesignLaunched[j].courseName}<span class="${graphicDesignLaunched[j].courseStart}"> <img src="assets/images/new.png" alt="new"></span></a>
+        <a href="" class="searchContent neworlaunched" id="coursename">${graphicDesignLaunched[j].courseName}<span class="${graphicDesignLaunched[j].courseStart}"></span></a>
         <p class="searchContent" id="coursecaption">${graphicDesignLaunched[j].courseCaption}</p>
         </div>
 
@@ -977,6 +799,8 @@ to+=5;
 }
 
 function marketingF(){
+    navbar.style.cssText="background-color:rgb(200, 80, 106)";
+
     for(let i=0;i<((marketing.length/5))-1;i++){
 
         points+=`
@@ -1012,7 +836,7 @@ function marketingF(){
         <div class="${marketing[j].courseCategory}" id="${marketing[j].courseCategory}">
         <div class="content-right-item">
         <div class="py-3">
-        <a href="" class="searchContent neworlaunched" id="coursename">${marketing[j].courseName}<span class="${marketing[j].courseStart}"> <img src="assets/images/new.png" alt="new"></span></a>
+        <a href="" class="searchContent neworlaunched" id="coursename">${marketing[j].courseName}<span class="${marketing[j].courseStart}"> </span></a>
         <p class="searchContent" id="coursecaption">${marketing[j].courseCaption}</p>
         </div>
 
@@ -1060,6 +884,8 @@ to+=5;
 }
 
 function marketingNewF(){
+    navbar.style.cssText="background-color:rgb(200, 80, 106)";
+
     for(let i=0;i<((marketingNew.length/5))-1;i++){
     
         points+=`
@@ -1095,7 +921,7 @@ function marketingNewF(){
         <div class="${marketingNew[j].courseCategory}" id="${marketingNew[j].courseCategory}">
         <div class="content-right-item">
         <div class="py-3">
-        <a href="" class="searchContent neworlaunched" id="coursename">${marketingNew[j].courseName}<span class="${marketingNew[j].courseStart}"> <img src="assets/images/new.png" alt="new"></span></a>
+        <a href="" class="searchContent neworlaunched" id="coursename">${marketingNew[j].courseName}<span class="${marketingNew[j].courseStart}"></span></a>
         <p class="searchContent" id="coursecaption">${marketingNew[j].courseCaption}</p>
         </div>
 
@@ -1143,6 +969,8 @@ to+=5;
 }
 
 function marketingLaunchedF(){
+    navbar.style.cssText="background-color:rgb(200, 80, 106)";
+
     for(let i=0;i<((marketingLaunched.length/5))-1;i++){
     
         points+=`
@@ -1234,5 +1062,44 @@ function empty(){
      pagesContentItem='';
      carouselPoints.innerHTML='';
      allPages.innerHTML='';
-     pagesClass=[];
 }
+
+export{
+    contentItem,
+    dropdown,
+    titelNav,
+    titlteCourses,
+    courseBranch,
+    allcourses,
+    links,
+    webDesign,
+    webDesignNew,
+    webDesignLaunched,
+    graphicDesign,
+    graphicDesignNew,
+    graphicDesignLaunched,
+    marketing,
+    marketingNew,
+    marketingLaunched,
+    carouselPoints,
+    allPages,
+    points,
+    pagesContent,
+    from,
+    to,
+    pagesContentItem,
+    // displaycontent,
+    categories,
+    allCoursesF,
+    webDesignF,
+    webDesignNewF,
+    webDesignLaunchedF,
+    graphicDesignF,
+    graphicDesignNewF,
+    graphicDesignLaunchedF,
+    marketingF,
+    marketingNewF,
+    marketingLaunchedF,
+    empty,
+}
+
