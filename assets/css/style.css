@@ -1487,11 +1487,13 @@ color:rgb(90, 88, 88);
 @keyframes newbutton{
 
     0%{
-        transform: scale(.95);
+        /* transform: scale(.90); */
+        font-size: 1.35rem;
     }
 
     100%{
-        transform: scale(1);
+        /* transform: scale(1); */
+        font-size: 1.5rem;
     }
 
 }
@@ -1855,7 +1857,7 @@ color: rgb(99, 177, 189);
 }
 
 .allcourses .content-left .content-item .dropdown{
-padding-top: 15px;
+    padding-top: 15px;
 }
 
 .allcourses .content-left .content-item .dropdown a{
@@ -1869,7 +1871,7 @@ padding-top: 15px;
     margin:10px 30px 20px 30px;
     padding:0px 30px !important;
     border-radius: 20px;
-    width: 78%;
+    width: 80%;
 }
 
 
@@ -1883,9 +1885,11 @@ visibility: hidden;
     font-size: 1.5rem;
 }
 
-.allcourses .content-right-item a img{
-    padding-left: 7px;
+.allcourses .content-right-item .neworlaunched .new{
+    font-size: 1.5rem;
     width: 5%;
+    color: red !important;
+
     animation-name: newbutton;
     animation-duration: .3s;
     animation-direction: alternate-reverse;
@@ -1922,23 +1926,19 @@ visibility: hidden;
     left: -30px;
   
     clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
-  
-  
+    
     animation-name:newbutton;
     animation-duration:.3s;
     animation-direction:alternate-reverse;
     animation-iteration-count: infinite;
-    
 }
 
-.allcourses .webdesign .content-right-item i{
-    color:rgb(111, 175, 185);
-    
+.allcourses .content-right-item i{
+    color:white;
 }
 
-.allcourses .webdesign .content-right-item span{
-    color:rgb(90, 88, 88);
-    
+.allcourses .content-right-item span{
+    color:white;   
 }
 
 .allcourses .graphicdesig .content-right-item{
@@ -1946,17 +1946,7 @@ visibility: hidden;
     margin:10px 30px 20px 30px;
     padding:0px 30px !important;
     border-radius: 20px;
-    width: 78%;
-}
-
-.allcourses .graphicdesig .content-right-item i{
-    color:rgb(249, 208, 83);
-    
-}
-
-.allcourses .graphicdesig .content-right-item span{
-    color:rgb(90, 88, 88);
-    
+    width: 80%;
 }
 
 .allcourses .marketing .content-right-item{
@@ -1964,17 +1954,7 @@ visibility: hidden;
     margin:10px 30px 20px 30px;
     padding:0px 30px !important;
     border-radius: 20px;
-    width: 78%;
-}
-
-.allcourses .marketing .content-right-item i{
-    color:rgb(229, 105, 131);
-    
-}
-
-.allcourses .marketing .content-right-item span{
-    color:rgb(90, 88, 88);
-    
+    width: 80%;
 }
 
 .allcourses .carouselpages{
@@ -1997,6 +1977,39 @@ margin: 7px;
 
 }
 
+.allcourses .course-item-desc{
+    background-color: rgb(156 196 202);
+    /* position:absolute; */
+    width:37.3%;
+    right:0px;
+    /* top: -10px; */
+    border-radius:0px 20px 20px 0 ;
+}
+
+.allcourses .graphicdesig .course-item-desc{
+    background-color: rgb(249, 208, 83);
+}
+
+.allcourses .marketing .course-item-desc{
+    background-color: rgb(229, 105, 131);
+}
+
+.allcourses .course-item-desc .buttons button{
+    border-radius:3px;
+    background-color: rgba(255, 255, 255);
+    border: 1.5px solid rgba(143,143,143,.7);
+    color:rgb(90, 88, 88);
+}
+
+.allcourses .course-item-desc .buttons a{
+    font-size: .9rem;
+}
+
+/* .allcourses .content-right .content-right-item .neworlaunched .new img{
+    width: 17% !important;
+    position:absolute;
+    top:-29%;
+} */
 
 /* *********************************************** */
 
