@@ -135,19 +135,16 @@ for(let i=0;i<windowContent.length;i++){
 
 
 // why
-let whyAnimate = document.getElementById('why-animate');
+let animate = document.querySelectorAll('.animate');
+let heartBeat = document.querySelectorAll('.heartBeat');
 
-window.addEventListener('scroll',function printe(){
+for(let i=0;i<animate.length;i++){
 
-    if(window.scrollY==100){
-        whyAnimate.classList.add('animate__heartBeat');
-    }
+    animate[i].addEventListener('mouseenter',function animationHeart(){
 
-    console.log(window.scrollY)
-
+    heartBeat[i].classList.add('animate__heartBeat');
 })
-
-
+}
 
 // counter
 var count= document.getElementsByClassName("content");
@@ -232,6 +229,14 @@ document.addEventListener('dblclick',function closealert(){
 
 
 // team
+let team = document.getElementById('team');
+let teamAnimation = document.getElementById('teamanimation')
+
+team.addEventListener('mouseenter',function animationHeart(){
+teamAnimation.classList.add('animate__bounceInUp');
+})
+
+
 let seeMore= document.getElementById("seemore");
 let seeLess= document.getElementById("seeless");
 let viewAllTeam = document.getElementById('viewteam');
