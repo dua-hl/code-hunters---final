@@ -233,7 +233,7 @@ overflow-y: scroll;
 /* window */ 
 .window{
     position: absolute;
-    top: 15%;
+    top: 10%;
     margin:0 400px ;
 }
 
@@ -314,7 +314,7 @@ overflow-y: scroll;
     color: white;
 }
 
-.about .abt-left button{
+.about .abt-left .buttons{
     border: 2px solid rgb(182, 113, 143);
     padding:13px 25px;
     color: rgb(182, 113, 143);
@@ -322,7 +322,7 @@ overflow-y: scroll;
     font-weight: 500;
 }
 
-.about .abt-left button:hover{
+.about .abt-left .buttons:hover{
     border: 2px solid white;
     background-color:rgb(182, 113, 143) ;
     color: white;
@@ -1231,7 +1231,6 @@ padding: 10px
 .courses .courses-desc .courses-details{
     width: 30%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    padding-bottom: 20px;
 }
 
 .courses .courses-desc .courses-details::before{
@@ -1256,7 +1255,7 @@ padding: 10px
     left: 0px;
 }
 
-.courses .graphic .courses-desc .courses-details::before{
+.courses .graphicdesign .courses-desc .courses-details::before{
     content: '';
     position: absolute;
     border-top: 5px solid rgb(249, 208, 83);
@@ -1267,7 +1266,7 @@ padding: 10px
     right: 0;
 }
 
-.courses .graphic .courses-desc .courses-details::after{
+.courses .graphicdesign .courses-desc .courses-details::after{
     content: '';
     position: absolute;
     border-left: 5px solid rgb(249, 208, 83);
@@ -1300,11 +1299,11 @@ padding: 10px
     left: 0px;
 }
 
-.courses .web .courses-desc .courses-details{
+.courses .webdesign .courses-desc .courses-details{
     border: rgb(122, 204, 217) 1px solid;
 }
 
-.courses .graphic .courses-desc .courses-details{
+.courses .graphicdesign .courses-desc .courses-details{
     border: rgb(249, 208, 83) 1px solid;
 }
 
@@ -1315,14 +1314,16 @@ padding: 10px
 
 .courses .courses-desc .courses-details .courses-underimg{
     padding:0 15px;
+    padding-top: 20px;
 }
 
 .courses .courses-desc .courses-details .image{
 }
 
-.courses .courses-desc .courses-details h3{
+.courses .courses-desc .courses-details a{
     color:rgb(90, 88, 88);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight:500;
 }
 
 .courses .courses-desc .courses-details p{
@@ -1333,9 +1334,6 @@ padding: 10px
     height: fit-content;
 }
 
-.courses .courses-desc .courses-details .overly{
-    visibility: hidden;
-}
 
 .courses .fa-clock{
     color: rgb(249, 208, 83);
@@ -1443,6 +1441,7 @@ color:rgb(90, 88, 88);
 }
 
 
+
 /* CSS */
 .button-53 {
   background-color: rgb(231, 61, 61);
@@ -1465,21 +1464,28 @@ color:rgb(90, 88, 88);
   touch-action: manipulation;
   position: absolute;
   top: 10px;
-  left: -30px;
+  left: -40px;
+  cursor: auto !important;
 
   clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
 
+}
 
-  animation-name:newbutton;
-  animation-duration:.3s;
-  animation-direction:alternate-reverse;
-  animation-iteration-count: infinite;
-  
+.courses .new-label{
+    animation-name:newlabel;
+    animation-duration:.3s;
+    animation-direction:alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+.courses .Launched{
+    visibility: hidden;
 }
 
 .button-53 h3{
     color: white !important;
     font-size: 1.3rem !important;
+
 }
 
 @media (min-width: 768px) {
@@ -1489,17 +1495,57 @@ color:rgb(90, 88, 88);
   }
 }
 
-@keyframes newbutton{
+@keyframes newlabel{
 
     0%{
         /* transform: scale(.90); */
-        font-size: 1.35rem;
+        transform:scale(.99);
     }
 
     100%{
         /* transform: scale(1); */
-        font-size: 1.5rem;
+        transform:scale(1);
     }
+
+}
+
+@keyframes newbutton{
+
+    0%{
+        /* transform: scale(.90); */
+        font-size: 1.25rem;
+    }
+
+    100%{
+        /* transform: scale(1); */
+        font-size: 1.35rem;
+    }
+
+}
+
+.courses .seemore button{
+    font-size: 1.1rem;
+    color: rgb(90, 88, 88);
+    cursor: pointer;
+    border-radius:10px;
+    border:2px rgb(152, 206, 214) solid;
+    padding: 2px 15px;
+    margin-top: 20px;
+    background-color:rgba(214, 210, 210, 0.193) !important;
+
+    animation-name:arrow-upsidedown ;
+    animation-duration: .5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.courses .graphicdesign .seemore button{
+    border: rgb(249, 208, 83) 2px solid;
+
+}
+
+.courses .marketing .seemore button{
+    border: rgb(229, 105, 131) 2px solid;
 
 }
 
@@ -1509,7 +1555,7 @@ color:rgb(90, 88, 88);
 /* feedback */
 .feedback{
     background-color: #e9ecef29;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
 }
 
 .feedback h2{
@@ -1532,12 +1578,12 @@ color:rgb(90, 88, 88);
 
 .feedback .yr-fd{
     right: 0;
-    top: 17%;
+    top: 16%;
 }
 
 .feedback .improve{
     right: 0;
-    top: 61.5%;
+    top: 57%;
 }
 
 .feedback .yr-fd h4 , .feedback .improve h4{
@@ -1689,18 +1735,24 @@ color:rgb(90, 88, 88);
 
   /* contact section */
 .regist{
-    background-image: url(../images/Capture-d’écran-2017-04-03-à-17.02.46.png);
-    background-position:center; 
-    background-size:cover; 
+    background-image: url(../images/form\ bg2.jpg);
     background-blend-mode: overlay;
+    background-size: cover;
+    background-position-y:90%;
     background-color:#343a3c;
     z-index: 2; 
-    
+    overflow: hidden;
+    height: 500px;
 }
+
+.regist .form-group{
+    overflow:hidden;
+    height:80px;
+}
+
 .regist .form-control {
         border: transparent !important;
         border-bottom: 1px solid rgba(148, 145, 145, 0.822) !important;
-        height: 58px !important;
         padding-left: 0;
         padding-right: 0;
         display: block;
@@ -1710,23 +1762,35 @@ color:rgb(90, 88, 88);
         border-radius: 0px;
         box-shadow: none !important;
 }
-.regist .form-group .btn{
-        width:100%;
-        background: #fd5f00;
-        border: 1px solid #fd5f00;
-        color: #fff;
+
+.regist textarea{
+    height:138px !important;
 }
 
-.regist .form-group .btn:hover{
-background: transparent;
-border: 1px solid #fd5f00;
+.regist .submit{
+        width:100%;
+        background: white;
+        border: 1px solid white;
+        color: rgb(87, 84, 84);
 }
-.regist input::placeholder{
+
+.regist .submit:hover{
+    box-shadow: rgba(169, 167, 67, 0.303) 0px 20px 30px;    
+    border: 2px solid rgb(87, 84, 84);
+}
+
+.regist input::placeholder,.regist textarea::placeholder{
     color: #FAFBFC !important;
     opacity: 1 !important;
 
 }
 
+.invalid-feedback{
+    color: white !important;
+}
+.valid-feedback{
+    color: white !important;
+}
 /* footer */
 .footer{
     margin:50px 40px 30px 70px;
@@ -1884,11 +1948,18 @@ color: rgb(99, 177, 189);
 visibility: hidden;
 }
 
-.allcourses .content-right-item a{
+.allcourses .content-right-item h3{
     color:rgb(90, 88, 88);
     font-weight: 500;
     font-size: 1.5rem;
 }
+
+.allcourses .content-right-item a ,.allcourses .content-right-item .form-button a{
+    color:rgb(90, 88, 88);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
 
 .allcourses .content-right-item .neworlaunched .new{
     font-size: 1.5rem;

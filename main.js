@@ -4,7 +4,6 @@ let dropdown = document.querySelectorAll('.dropdown');
 let titelNav = document.getElementById('titelofnav');
 let titlteCourses = document.querySelectorAll('.titlte-ofcourses');
 let navbar = document.getElementById('navbar');
-let links = document.querySelectorAll('.links');
 let formButton = document.querySelectorAll('.form-button');
 
 let courseBranch = document.querySelectorAll('course-branch');
@@ -16,11 +15,16 @@ let from = 0;
 let to = 5;
 let pagesContentItem = '';
 
+let coursesNav = document.querySelectorAll('.courses .nav-item');
+let coursContent = document.querySelectorAll('.courses .coursefromjs');
+
 let allcourses = [
 
     {
+        courseID:"c1",
         courseCategory: "webdesign",
         courseName: "Full Stack",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae? Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -30,8 +34,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c2",
         courseCategory: "webdesign",
         courseName: "Full Stack",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -42,8 +48,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c3",
         courseCategory: "marketing",
         courseName: "Marketing",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -54,8 +62,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c4",
         courseCategory: "webdesign",
         courseName: "Computer Science",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -66,8 +76,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c5",
         courseCategory: "webdesign",
         courseName: "Computer Science",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -78,8 +90,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c6",
         courseCategory: "graphicdesig",
         courseName: "Photoshop",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -90,8 +104,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c7",
         courseCategory: "graphicdesig",
         courseName: "Photoshop",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -102,8 +118,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c8",
         courseCategory: "marketing",
         courseName: "Marketing",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -114,8 +132,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c9",
         courseCategory: "graphicdesig",
         courseName: "Photoshop",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -126,8 +146,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c10",
         courseCategory: "marketing",
         courseName: "Marketing",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -138,8 +160,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c11",
         courseCategory: "marketing",
         courseName: "Marketing",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -150,8 +174,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c12",
         courseCategory: "marketing",
         courseName: "Marketing",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -162,8 +188,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c13",
         courseCategory: "marketing",
         courseName: "Marketing",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -174,8 +202,10 @@ let allcourses = [
     }
     ,
     {
+        courseID:"c14",
         courseCategory: "webdesign",
         courseName: "Computer Science",
+        courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
         courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
         courseTrainer: "Tariq Shreem",
         coursePrice: "250$",
@@ -198,9 +228,9 @@ let marketing = [];
 let marketingNew = [];
 let marketingLaunched = [];
 
+
 function categories() {
     for (let i = 0; i < allcourses.length; i++) {
-
         if (allcourses[i].courseCategory == "webdesign") {
             webDesign.push(allcourses[i]);
         } else if (allcourses[i].courseCategory == "graphicdesig") {
@@ -228,6 +258,161 @@ function categories() {
             marketingLaunched.push(allcourses[i]);
         }
     }
+}
+
+categories();
+
+function webdesignMain(){
+  let courseDesc='';
+console.log(webDesign.length)
+
+for(let i=0;i<6;i++){
+  if(i>=webDesign.length){
+    break;
+  }
+  courseDesc+=`
+  <div class="courses-details col-6 position-relative my-1">
+  <div class='new-label ${webDesign[i].courseStart}'>
+  <button class="button-53 d-flex gap-2 align-items-center justify-content-center" role="button">
+    <h3>New</h3>
+    <i class="fa-solid fa-fire"></i>
+  </button>
+</div>
+  <div class="d-flex">
+
+  <div class="image col-4">
+    <img src="assets/images/suggestions/New folder/how-to-give-great-code-reviews-when-youre-new-to-a-system.jpg" alt="portfolio1" class="w-100">
+  </div>
+
+  <div class="col-8">
+  <div class="courses-underimg">
+  <a href="./webdesign/webdesign.html#${webDesign[i].courseID}" class="searchContent">${webDesign[i].courseName}</a>
+  <p class="searchContent">${webDesign[i].courseCaptionmain}</p>
+  </div>
+</div>
+
+</div>  
+<div class="d-flex border-top py-2 px-2">
+<div class="col-6 px-2">
+    <i class="fa-regular fa-clock"></i>
+    <span class="ps-2">${webDesign[i].startDate}</span>
+</div>
+
+<div class="col-6 text-end px-2">
+    <i class="fa-regular fa-calendar-days"></i>
+    <span class="ps-2">${webDesign[i].courseTime}</span>
+</div>
+</div> 
+</div>
+  
+ `
+}
+
+
+coursContent[0].innerHTML=courseDesc;
+
+}
+
+function graphicedesignMain(){
+
+  let courseDesc='';
+
+for(let i=0;i<6;i++){
+
+  if(i>=graphicDesign.length){
+    break;
+  }
+  courseDesc+=`
+  <div class="courses-details col-6 position-relative my-1">
+  <div class='new-label ${graphicDesign[i].courseStart}'>
+  <button class="button-53 d-flex gap-2 align-items-center justify-content-center" role="button">
+    <h3>New</h3>
+    <i class="fa-solid fa-fire"></i>
+  </button>
+</div>
+  <div class="d-flex">
+
+  <div class="image col-4">
+    <img src="assets/images/suggestions/New folder/how-to-give-great-code-reviews-when-youre-new-to-a-system.jpg" alt="portfolio1" class="w-100">
+  </div>
+
+  <div class="col-8">
+  <div class="courses-underimg">
+  <a href="http://127.0.0.1:5500/graphic%20design/graphicdesign.html#${graphicDesign[i].courseID}" class="searchContent">${graphicDesign[i].courseName}</a>
+  <p class="searchContent">${graphicDesign[i].courseCaptionmain}</p>
+  </div>
+</div>
+
+</div>  
+<div class="d-flex border-top py-2 px-2">
+<div class="col-6 px-2">
+    <i class="fa-regular fa-clock"></i>
+    <span class="ps-2">${graphicDesign[i].startDate}</span>
+</div>
+
+<div class="col-6 text-end px-2">
+    <i class="fa-regular fa-calendar-days"></i>
+    <span class="ps-2">${graphicDesign[i].courseTime}</span>
+</div>
+</div> 
+</div>
+  
+  `
+
+}
+coursContent[1].innerHTML=courseDesc;
+}
+
+function marketingMain(){
+  let courseDesc='';
+
+for(let i=0;i<6;i++){
+  if(i>=marketing.length){
+    break;
+  }
+
+  courseDesc+=`
+  <div class="courses-details col-6 position-relative my-1">
+  <div class='new-label ${marketing[i].courseStart}'>
+  <button class="button-53 d-flex gap-2 align-items-center justify-content-center" role="button">
+    <h3>New</h3>
+    <i class="fa-solid fa-fire"></i>
+  </button>
+</div>
+  <div class="d-flex">
+
+  <div class="image col-4">
+    <img src="assets/images/suggestions/New folder/how-to-give-great-code-reviews-when-youre-new-to-a-system.jpg" alt="portfolio1" class="w-100">
+  </div>
+
+  <div class="col-8">
+  <div class="courses-underimg">
+  <a href="http://127.0.0.1:5500/marketing/marketing.html#${marketing[i].courseID}" class="searchContent">${marketing[i].courseName}</a>
+  <p class="searchContent">${marketing[i].courseCaptionmain}</p>
+  </div>
+</div>
+
+</div>  
+<div class="d-flex border-top py-2 px-2">
+<div class="col-6 px-2">
+    <i class="fa-regular fa-clock"></i>
+    <span class="ps-2">${marketing[i].startDate}</span>
+</div>
+
+<div class="col-6 text-end px-2">
+    <i class="fa-regular fa-calendar-days"></i>
+    <span class="ps-2">${marketing[i].courseTime}</span>
+</div>
+</div> 
+</div>
+  
+  `
+  if(i>marketing.length){
+    break;
+   }
+
+}
+coursContent[2].innerHTML=courseDesc;
 }
 
 function allCoursesF() {
@@ -266,15 +451,14 @@ function allCoursesF() {
             }
 
             pagesContentItem += `
-        <div class="${allcourses[j].courseCategory}" id="${allcourses[j].courseCategory} ">
+        <div class="${allcourses[j].courseCategory}" id="${allcourses[j].courseID}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
-        <a href="" class="searchContent neworlaunched text-capitalize" id="coursename">${allcourses[j].courseName}<span class="${allcourses[j].courseStart} ms-4">NEW</span></a>
+        <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${allcourses[j].courseName}<span class="${allcourses[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${allcourses[j].courseCaption}</p>
         </div>
   
-      
-        <div class="course-item-desc col-4">
+            <div class="course-item-desc col-4">
             <div>
             <div>
                 <div class="px-3 py-3" id="bordertop">
@@ -337,12 +521,14 @@ formButton[i].innerHTML="Registration Form"
 }
 }
 
-
 function webDesignF() {
+
     navbar.style.cssText = "background-color: rgb(90, 88, 88);";
 
-    for (let i = 0; i < (webDesign.length / 5) - 1; i++) {
-
+    for (let i = 0; i < Math.floor((webDesign.length / 5)) ; i++) {
+      if((webDesign.length)%5==0){
+        break;
+      }
         points += `
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i + 1}"><h5>Page ${i + 2}</h5></button>
         `
@@ -351,7 +537,10 @@ function webDesignF() {
     carouselPoints.innerHTML = `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
 
 
-    for (let i = 0; i < (webDesign.length / 5) - 1; i++) {
+    for (let i = 0; i < Math.floor((webDesign.length / 5)); i++) {
+      if((webDesign.length)%5==0){
+        break;
+      }
         pagesContent += `
             <div class="pages carousel-item" id="slide${i + 1}">
         
@@ -365,19 +554,20 @@ function webDesignF() {
     let pagesClass = document.querySelectorAll('.pages');
 
 
-    for (let i = 0; i < (webDesign.length / 5); i++) {
+    for (let i = 0; i <= Math.floor ((webDesign.length / 5)); i++) {
 
         pagesContentItem = '';
         for (let j = from; j < to; j++) {
-            if (j > webDesign.length - 1) {
-                break;
-            }
+
+            if (j > webDesign.length) {
+                to=webDesign.length;
+              }            
 
             pagesContentItem += `
-        <div class="${webDesign[j].courseCategory}" id="${webDesign[j].courseCategory} ">
+        <div class="${webDesign[j].courseCategory}" id="${webDesign[j].courseID}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
-        <a href="" class="searchContent neworlaunched text-capitalize" id="coursename">${webDesign[j].courseName}<span class="${webDesign[j].courseStart} ms-4">NEW</span></a>
+        <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${webDesign[j].courseName}<span class="${webDesign[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${webDesign[j].courseCaption}</p>
         </div>
   
@@ -426,10 +616,8 @@ function webDesignF() {
       </div>
       </div> 
         `;
-
-
-
         }
+        console.log(window.location.hash)
 
         pagesClass[i].innerHTML = pagesContentItem;
 
@@ -440,15 +628,16 @@ function webDesignF() {
         to += 5;
 
 
-    }
+        let formButton = document.querySelectorAll('.form-button');
 
-    let formButton = document.querySelectorAll('.form-button');
-
-    for (let i = 0; i < (allcourses.length); i++) {
+        for (let k = 0; k < (webDesign.length); k++) {
     
-    if(allcourses[i].courseStart=="new"){
-    formButton[i].innerHTML="Registration Form"
-    } else {formButton[i].innerHTML="Course Tasks"} 
+          if(webDesign[k].courseStart=="new"){
+          formButton[k].innerHTML="Registration Form"
+          } else {formButton[k].innerHTML="View Tasks"} 
+          }
+
+
     }
 
 }
@@ -456,8 +645,10 @@ function webDesignF() {
 function webDesignNewF() {
     navbar.style.cssText = "background-color: rgb(90, 88, 88);";
 
-    for (let i = 0; i < (webDesignNew.length / 5) - 1; i++) {
-
+    for (let i = 0; i < Math.floor((webDesignNew.length / 5)); i++) {
+      if((webDesignNew.length)%5==0){
+        break;
+      }
         points += `
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i + 1}"><h5>Page ${i + 2}</h5></button>
         `
@@ -466,7 +657,10 @@ function webDesignNewF() {
     carouselPoints.innerHTML = `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
 
 
-    for (let i = 0; i < (webDesignNew.length / 5) - 1; i++) {
+    for (let i = 0; i < Math.floor((webDesignNew.length / 5)); i++) {
+      if((webDesignNew.length)%5==0){
+        break;
+      }
         pagesContent += `
             <div class="pages carousel-item" id="slide${i + 1}">
         
@@ -480,19 +674,23 @@ function webDesignNewF() {
     let pagesClass = document.querySelectorAll('.pages');
 
 
-    for (let i = 0; i < (webDesignNew.length / 5); i++) {
+    for (let i = 0; i <Math.floor ((webDesign.length / 5)); i++) {
+
+      if (to > webDesignNew.length) {
+        to=webDesignNew.length;
+      }  
 
         pagesContentItem = '';
         for (let j = from; j < to; j++) {
-            if (j > webDesignNew.length - 1) {
+            if (j > webDesignNew.length) {
                 break;
             }
 
             pagesContentItem += `
-        <div class="${webDesignNew[j].courseCategory}" id="${webDesignNew[j].courseCategory} ">
+        <div class="${webDesignNew[j].courseCategory}" id="${webDesignNew[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
-        <a href="" class="searchContent neworlaunched text-capitalize" id="coursename">${webDesignNew[j].courseName}<span class="${webDesignNew[j].courseStart} ms-4">NEW</span></a>
+        <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${webDesignNew[j].courseName}<span class="${webDesignNew[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${webDesignNew[j].courseCaption}</p>
         </div>
   
@@ -528,7 +726,7 @@ function webDesignNewF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="#"></a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="#">Registraion Form</a></button>
                 </div>
   
               </div>
@@ -553,15 +751,7 @@ function webDesignNewF() {
 
         from += 5;
         to += 5;
-    }
 
-    let formButton = document.querySelectorAll('.form-button');
-
-    for (let i = 0; i < (allcourses.length); i++) {
-    
-    if(allcourses[i].courseStart=="new"){
-    formButton[i].innerHTML="Registration Form"
-    } else {formButton[i].innerHTML="Course Tasks"} 
     }
 
 }
@@ -569,8 +759,10 @@ function webDesignNewF() {
 function webDesignLaunchedF() {
     navbar.style.cssText = "background-color: rgb(90, 88, 88);";
 
-    for (let i = 0; i < (webDesignLaunched.length / 5) - 1; i++) {
-
+    for (let i = 0; i < Math.floor((webDesignLaunched.length / 5)); i++) {
+      if((webDesignLaunched.length)%5==0){
+        break;
+      }
         points += `
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i + 1}"><h5>Page ${i + 2}</h5></button>
         `
@@ -579,7 +771,7 @@ function webDesignLaunchedF() {
     carouselPoints.innerHTML = `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
 
 
-    for (let i = 0; i < (webDesignLaunched.length / 5) - 1; i++) {
+    for (let i = 0; i < Math.floor((webDesignLaunched.length / 5)); i++) {
         pagesContent += `
             <div class="pages carousel-item" id="slide${i + 1}">
         
@@ -594,18 +786,20 @@ function webDesignLaunchedF() {
 
 
     for (let i = 0; i < (webDesignLaunched.length / 5); i++) {
-
+      if (to > webDesignLaunched.length) {
+        to=webDesignLaunched.length;
+      }  
         pagesContentItem = '';
         for (let j = from; j < to; j++) {
-            if (j > webDesignLaunched.length - 1) {
-                break;
-            }
+          if (j > webDesignLaunched.length) {
+            to=webDesignLaunched.length;
+          } 
 
             pagesContentItem += `
-        <div class="${webDesignLaunched[j].courseCategory}" id="${webDesignLaunched[j].courseCategory} ">
+        <div class="${webDesignLaunched[j].courseCategory}" id="${webDesignLaunched[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
-        <a href="" class="searchContent neworlaunched text-capitalize" id="coursename">${webDesignLaunched[j].courseName}<span class="${webDesignLaunched[j].courseStart} ms-4">NEW</span></a>
+        <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${webDesignLaunched[j].courseName}<span class="${webDesignLaunched[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${webDesignLaunched[j].courseCaption}</p>
         </div>
   
@@ -641,7 +835,7 @@ function webDesignLaunchedF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="#"></a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="#">View Tasks</a></button>
                 </div>
   
               </div>
@@ -669,21 +863,16 @@ function webDesignLaunchedF() {
 
     }
 
-    let formButton = document.querySelectorAll('.form-button');
-
-for (let i = 0; i < (allcourses.length); i++) {
-
-if(allcourses[i].courseStart=="new"){
-formButton[i].innerHTML="Registration Form"
-} else {formButton[i].innerHTML="Course Tasks"} 
-}
-
 }
 
 function graphicDesignF() {
+
     navbar.style.cssText="background-color: rgb(90, 88, 88);";
 
-    for(let i=0;i<(graphicDesign.length/5)-1;i++){
+    for(let i=0;i<(Math.floor((graphicDesign.length / 5)));i++){
+      if((graphicDesign.length)%5==0){
+        break;
+      }
 
         points+=`
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i+1}"><h5>Page ${i+2}</h5></button>
@@ -693,7 +882,10 @@ function graphicDesignF() {
         carouselPoints.innerHTML=`<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
         
  
-        for(let i=0;i<(graphicDesign.length/5)-1;i++){
+        for(let i=0;i<(Math.floor((graphicDesign.length / 5)));i++){
+          if((graphicDesign.length)%5==0){
+            break;
+          }
             pagesContent+=`
             <div class="pages carousel-item" id="slide${i+1}">
         
@@ -707,19 +899,19 @@ function graphicDesignF() {
         let pagesClass=document.querySelectorAll('.pages');
  
  
- for(let i=0;i<(graphicDesign.length/5);i++){
- 
+ for(let i=0;i<=Math.floor((graphicDesign.length/5));i++){
+
     pagesContentItem='';
+  if(to>graphicDesign.length){
+    to=graphicDesign.length;
+  }
+
     for(let j=from;j<to;j++){
-        if(j>graphicDesign.length-1){
-            break;
-        }
- 
         pagesContentItem+=`
-        <div class="${graphicDesign[j].courseCategory}" id="${graphicDesign[j].courseCategory} ">
+        <div class="${graphicDesign[j].courseCategory}" id="${graphicDesign[j].courseID}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
-        <a href="" class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesign[j].courseName}<span class="${graphicDesign[j].courseStart} ms-4">NEW</span></a>
+        <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesign[j].courseName}<span class="${graphicDesign[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${graphicDesign[j].courseCaption}</p>
         </div>
   
@@ -768,9 +960,6 @@ function graphicDesignF() {
       </div>
       </div> 
         `;
-
-
-
     }
 
     pagesClass[i].innerHTML=pagesContentItem;
@@ -781,15 +970,16 @@ function graphicDesignF() {
 from+=5;
 to+=5;
 
-}
-
 let formButton = document.querySelectorAll('.form-button');
 
-for (let i = 0; i < (allcourses.length); i++) {
+for (let k = 0; k < (graphicDesign.length); k++) {
 
-if(allcourses[i].courseStart=="new"){
-formButton[i].innerHTML="Registration Form"
-} else {formButton[i].innerHTML="Course Tasks"} 
+
+if(graphicDesign[k].courseStart=="new"){
+formButton[k].innerHTML="Registration Form"
+} else {formButton[k].innerHTML="View Tasks"} 
+}
+
 }
 
 }
@@ -797,8 +987,10 @@ formButton[i].innerHTML="Registration Form"
 function graphicDesignNewF() {
     navbar.style.cssText="background-color: rgb(90, 88, 88);";
 
-    for(let i=0;i<(graphicDesignNew.length/5)-1;i++){
-
+    for(let i=0;i<Math.floor((graphicDesignNew.length / 5));i++){
+      if((graphicDesignNew.length)%5==0){
+        break;
+      }
         points+=`
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i+1}"><h5>Page ${i+2}</h5></button>
         `
@@ -807,7 +999,10 @@ function graphicDesignNewF() {
         carouselPoints.innerHTML=`<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
         
  
-        for(let i=0;i<(graphicDesignNew.length/5)-1;i++){
+        for(let i=0;i<Math.floor((graphicDesignNew.length / 5));i++){
+          if((graphicDesignNew.length)%5==0){
+            break;
+          }
             pagesContent+=`
             <div class="pages carousel-item" id="slide${i+1}">
         
@@ -822,7 +1017,9 @@ function graphicDesignNewF() {
  
  
  for(let i=0;i<(graphicDesignNew.length/5);i++){
- 
+  if(to>graphicDesignNew.length){
+    to=graphicDesignNew.length;
+  }
     pagesContentItem='';
     for(let j=from;j<to;j++){
         if(j>graphicDesignNew.length-1){
@@ -830,10 +1027,10 @@ function graphicDesignNewF() {
         }
  
         pagesContentItem+=`
-        <div class="${graphicDesignNew[j].courseCategory}" id="${graphicDesignNew[j].courseCategory} ">
+        <div class="${graphicDesignNew[j].courseCategory}" id="${graphicDesignNew[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
-        <a href="" class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesignNew[j].courseName}<span class="${graphicDesignNew[j].courseStart} ms-4">NEW</span></a>
+        <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesignNew[j].courseName}<span class="${graphicDesignNew[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${graphicDesignNew[j].courseCaption}</p>
         </div>
   
@@ -869,7 +1066,7 @@ function graphicDesignNewF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="#"></a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="#">Registraion Form</a></button>
                 </div>
   
               </div>
@@ -896,22 +1093,15 @@ from+=5;
 to+=5;
 }
 
-let formButton = document.querySelectorAll('.form-button');
-
-for (let i = 0; i < (allcourses.length); i++) {
-
-if(allcourses[i].courseStart=="new"){
-formButton[i].innerHTML="Registration Form"
-} else {formButton[i].innerHTML="Course Tasks"} 
-}
-
 }
 
 function graphicDesignLaunchedF() {
     navbar.style.cssText="background-color: rgb(90, 88, 88);";
 
-    for(let i=0;i<(graphicDesignLaunched.length/5)-1;i++){
-
+    for(let i=0;i<Math.floor((graphicDesignLaunched.length / 5));i++){
+      if((graphicDesignLaunched.length)%5==0){
+        break;
+      }
         points+=`
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i+1}"><h5>Page ${i+2}</h5></button>
         `
@@ -920,7 +1110,10 @@ function graphicDesignLaunchedF() {
         carouselPoints.innerHTML=`<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
         
  
-        for(let i=0;i<(graphicDesignLaunched.length/5)-1;i++){
+        for(let i=0;i<Math.floor((graphicDesignLaunched.length / 5));i++){
+          if((graphicDesignLaunched.length)%5==0){
+            break;
+          }
             pagesContent+=`
             <div class="pages carousel-item" id="slide${i+1}">
         
@@ -934,8 +1127,10 @@ function graphicDesignLaunchedF() {
         let pagesClass=document.querySelectorAll('.pages');
  
  
- for(let i=0;i<(graphicDesignLaunched.length/5);i++){
- 
+        for(let i=0;i<(graphicDesignLaunched.length/5);i++){
+          if(to>graphicDesignLaunched.length){
+            to=graphicDesignLaunched.length;
+          }
     pagesContentItem='';
     for(let j=from;j<to;j++){
         if(j>graphicDesignLaunched.length-1){
@@ -943,10 +1138,10 @@ function graphicDesignLaunchedF() {
         }
  
         pagesContentItem+=`
-        <div class="${graphicDesignLaunched[j].courseCategory}" id="${graphicDesignLaunched[j].courseCategory} ">
+        <div class="${graphicDesignLaunched[j].courseCategory}" id="${graphicDesignLaunched[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
-        <a href="" class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesignLaunched[j].courseName}<span class="${graphicDesignLaunched[j].courseStart} ms-4">NEW</span></a>
+        <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesignLaunched[j].courseName}<span class="${graphicDesignLaunched[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${graphicDesignLaunched[j].courseCaption}</p>
         </div>
   
@@ -982,7 +1177,7 @@ function graphicDesignLaunchedF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="#"></a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="#">View Tasks</a></button>
                 </div>
   
               </div>
@@ -1008,119 +1203,104 @@ function graphicDesignLaunchedF() {
 from+=5;
 to+=5;
 
-}
-
-let formButton = document.querySelectorAll('.form-button');
-
-for (let i = 0; i < (allcourses.length); i++) {
-
-if(allcourses[i].courseStart=="new"){
-formButton[i].innerHTML="Registration Form"
-} else {formButton[i].innerHTML="Course Tasks"} 
 }
 
 }
 
 function marketingF() {
-    navbar.style.cssText="background-color: rgb(90, 88, 88);";
+  navbar.style.cssText = "background-color: rgb(90, 88, 88);";
 
-    for(let i=0;i<(marketing.length/5)-1;i++){
+  for (let i = 0; i < (marketing.length / 5) - 1; i++) {
 
-        points+=`
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i+1}"><h5>Page ${i+2}</h5></button>
-        `
-        }
-        
-        carouselPoints.innerHTML=`<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
-        
- 
-        for(let i=0;i<(marketing.length/5)-1;i++){
-            pagesContent+=`
-            <div class="pages carousel-item" id="slide${i+1}">
-        
-        
-            </div>
-        `
-        }
- 
-        allPages.innerHTML=`<div class="pages carousel-item active" id="slide0"></div>` + pagesContent;
- 
-        let pagesClass=document.querySelectorAll('.pages');
- 
- 
- for(let i=0;i<(marketing.length/5);i++){
- 
-    pagesContentItem='';
-    for(let j=from;j<to;j++){
-        if(j>marketing.length-1){
-            break;
-        }
- 
-        pagesContentItem+=`
-        <div class="${marketing[j].courseCategory}" id="${marketing[j].courseCategory} ">
-        <div class="content-right-item d-flex">
-        <div class="py-3 col-8">
-        <a href="" class="searchContent neworlaunched text-capitalize" id="coursename">${marketing[j].courseName}<span class="${marketing[j].courseStart} ms-4">NEW</span></a>
-        <p class="searchContent" id="coursecaption">${marketing[j].courseCaption}</p>
-        </div>
-  
+      points += `
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i + 1}"><h5>Page ${i + 2}</h5></button>
+      `
+  }
+
+  carouselPoints.innerHTML = `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
+
+
+  for (let i = 0; i < (marketing.length / 5) - 1; i++) {
+      pagesContent += `
+          <div class="pages carousel-item" id="slide${i + 1}">
       
-        <div class="course-item-desc col-4">
-            <div>
-            <div>
-                <div class="px-3 py-3" id="bordertop">
-  
-                  <div class="d-flex gap-2">
-                    <div class=" d-flex py-2 gap-1 col-6">
-                      <div class="text-start"><i class="fa-solid fa-chalkboard-user icon"></i></div>
-                      <div class="text-start"><span class="ps-2 text-capitalize" id="coursetrainer">${marketing[j].startDate}</span></div>
-                    </div>
-  
-                    <div class=" d-flex py-2 gap-1 col-6">
-                      <div class="text-start"><i class="fa-solid fa-chalkboard-user icon"></i></div>   
-                      <div class="text-start"><span class="ps-2 text-capitalize" id="coursetrainer">${marketing[j].courseTrainer}</span></div>
-                    </div>
+      
+          </div>
+      `
+  }
+
+  allPages.innerHTML = `<div class="pages carousel-item active" id="slide0"></div>` + pagesContent;
+
+  let pagesClass = document.querySelectorAll('.pages');
+
+
+  for (let i = 0; i < (marketing.length / 5); i++) {
+
+      pagesContentItem = '';
+      for (let j = from; j < to; j++) {
+          if (j > marketing.length - 1) {
+              break;
+          }
+
+          pagesContentItem += `
+      <div class="${marketing[j].courseCategory}" id="${marketing[j].courseID}">
+      <div class="content-right-item d-flex">
+      <div class="py-3 col-8">
+      <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${marketing[j].courseName}<span class="${marketing[j].courseStart} ms-4">NEW</span></h3>
+      <p class="searchContent" id="coursecaption">${marketing[j].courseCaption}</p>
+      </div>
+
+    
+      <div class="course-item-desc col-4">
+          <div>
+          <div>
+              <div class="px-3 py-3" id="bordertop">
+
+                <div class="d-flex gap-2">
+                  <div class=" d-flex py-2 gap-1 col-6">
+                    <div class="text-start"><i class="fa-solid fa-chalkboard-user icon"></i></div>
+                    <div class="text-start"><span class="ps-2 text-capitalize" id="coursetrainer">${marketing[j].startDate}</span></div>
+                  </div>
+
+                  <div class=" d-flex py-2 gap-1 col-6">
+                    <div class="text-start"><i class="fa-solid fa-chalkboard-user icon"></i></div>   
+                    <div class="text-start"><span class="ps-2 text-capitalize" id="coursetrainer">${marketing[j].courseTrainer}</span></div>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-2">
+                  <div class="d-flex py-2 gap-1 col-6">
+                    <div class="text-start"><i class="fa-solid fa-sack-dollar icon"></i></div> 
+                    <div class="text-start"><span class="ps-2 " id="courseprice">${marketing[j].coursePrice}</span></div>
                   </div>
   
-                  <div class="d-flex gap-2">
-                    <div class="d-flex py-2 gap-1 col-6">
-                      <div class="text-start"><i class="fa-solid fa-sack-dollar icon"></i></div> 
-                      <div class="text-start"><span class="ps-2 " id="courseprice">${marketing[j].coursePrice}</span></div>
-                    </div>
-    
-                    <div class=" d-flex py-2 gap-1 col-6">
-                      <div class="text-start"><i class="fa-regular fa-calendar-days icon"></i></div>
-                      <div class="text-start"><span class="ps-2 text-capitalize" id="coursetime">${marketing[j].courseTime}</span></div>
-                    </div>
-                </div>
-  
-                <div class="w-100 buttons pt-3 text-center">
-                  <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="#"></a></button>
-                </div>
-  
+                  <div class=" d-flex py-2 gap-1 col-6">
+                    <div class="text-start"><i class="fa-regular fa-calendar-days icon"></i></div>
+                    <div class="text-start"><span class="ps-2 text-capitalize" id="coursetime">${marketing[j].courseTime}</span></div>
+                  </div>
               </div>
-  
+
+              <div class="w-100 buttons pt-3 text-center">
+                <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
+                <button class="w-75 text-capitalize form-button"><a href="#"></a></button>
+              </div>
+
             </div>
-        </div>
-        </div>
-  
-  
+
+          </div>
       </div>
-      </div> 
-        `;
+      </div>
 
 
+    </div>
+    </div> 
+  `;
+      }
+      pagesClass[i].innerHTML = pagesContentItem;
 
-    }
+      from += 5;
+      to += 5;
 
-    pagesClass[i].innerHTML=pagesContentItem;
-
-
-
-
-from+=5;
-to+=5;
 
 }
 
@@ -1132,14 +1312,15 @@ if(allcourses[i].courseStart=="new"){
 formButton[i].innerHTML="Registration Form"
 } else {formButton[i].innerHTML="Course Tasks"} 
 }
-
 }
 
 function marketingNewF() {
     navbar.style.cssText="background-color: rgb(90, 88, 88);";
 
-    for(let i=0;i<(marketingNew.length/5)-1;i++){
-
+    for(let i=0;i<Math.floor((marketingNew.length / 5));i++){
+      if((marketingNew.length)%5==0){
+        break;
+      }
         points+=`
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i+1}"><h5>Page ${i+2}</h5></button>
         `
@@ -1148,7 +1329,10 @@ function marketingNewF() {
         carouselPoints.innerHTML=`<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
         
  
-        for(let i=0;i<(marketingNew.length/5)-1;i++){
+        for(let i=0;i<Math.floor((marketingNew.length / 5));i++){
+          if((marketingNew.length)%5==0){
+            break;
+          }
             pagesContent+=`
             <div class="pages carousel-item" id="slide${i+1}">
         
@@ -1162,19 +1346,22 @@ function marketingNewF() {
         let pagesClass=document.querySelectorAll('.pages');
  
  
- for(let i=0;i<(marketingNew.length/5);i++){
- 
+ for(let i=0;i<Math.floor((marketing.length / 5));i++){
+
+  if(to>marketingNew.length){
+    to=marketingNew.length;
+  }
     pagesContentItem='';
     for(let j=from;j<to;j++){
         if(j>marketingNew.length-1){
             break;
-        }
+      }
  
         pagesContentItem+=`
-        <div class="${marketingNew[j].courseCategory}" id="${marketingNew[j].courseCategory} ">
+        <div class="${marketingNew[j].courseCategory}" id="${marketingNew[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
-        <a href="" class="searchContent neworlaunched text-capitalize" id="coursename">${marketingNew[j].courseName}<span class="${marketingNew[j].courseStart} ms-4">NEW</span></a>
+        <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${marketingNew[j].courseName}<span class="${marketingNew[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${marketingNew[j].courseCaption}</p>
         </div>
   
@@ -1210,7 +1397,7 @@ function marketingNewF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="#"></a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="#">Registraion Form</a></button>
                 </div>
   
               </div>
@@ -1237,22 +1424,15 @@ from+=5;
 to+=5;
 }
 
-let formButton = document.querySelectorAll('.form-button');
-
-for (let i = 0; i < (allcourses.length); i++) {
-
-if(allcourses[i].courseStart=="new"){
-formButton[i].innerHTML="Registration Form"
-} else {formButton[i].innerHTML="Course Tasks"} 
-}
-
 }
 
 function marketingLaunchedF() {
     navbar.style.cssText="background-color: rgb(90, 88, 88);";
 
-    for(let i=0;i<(marketingLaunched.length/5)-1;i++){
-
+    for(let i=0;i<Math.floor((marketingLaunched.length / 5));i++){
+      if((marketingLaunched.length)%5==0){
+        break;
+      }
         points+=`
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i+1}"><h5>Page ${i+2}</h5></button>
         `
@@ -1261,7 +1441,10 @@ function marketingLaunchedF() {
         carouselPoints.innerHTML=`<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"><h5>Page 1</h5></button>` + points;
         
  
-        for(let i=0;i<(marketingLaunched.length/5)-1;i++){
+        for(let i=0;i<Math.floor((marketingLaunched.length / 5));i++){
+          if((marketingLaunched.length)%5==0){
+            break;
+          }
             pagesContent+=`
             <div class="pages carousel-item" id="slide${i+1}">
         
@@ -1276,7 +1459,10 @@ function marketingLaunchedF() {
  
  
  for(let i=0;i<(marketingLaunched.length/5);i++){
- 
+
+  if(to>marketingLaunched.length){
+    to=marketingLaunched.length;
+  }
     pagesContentItem='';
     for(let j=from;j<to;j++){
         if(j>marketingLaunched.length-1){
@@ -1284,10 +1470,10 @@ function marketingLaunchedF() {
         }
  
         pagesContentItem+=`
-        <div class="${marketingLaunched[j].courseCategory}" id="${marketingLaunched[j].courseCategory} ">
+        <div class="${marketingLaunched[j].courseCategory}" id="${marketingLaunched[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
-        <a href="" class="searchContent neworlaunched text-capitalize" id="coursename">${marketingLaunched[j].courseName}<span class="${marketingLaunched[j].courseStart} ms-4">NEW</span></a>
+        <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${marketingLaunched[j].courseName}<span class="${marketingLaunched[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${marketingLaunched[j].courseCaption}</p>
         </div>
   
@@ -1323,7 +1509,7 @@ function marketingLaunchedF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="#"></a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="#">View Tasks</a></button>
                 </div>
   
               </div>
@@ -1350,15 +1536,6 @@ from+=5;
 to+=5;
 }
 
-let formButton = document.querySelectorAll('.form-button');
-
-for (let i = 0; i < (allcourses.length); i++) {
-
-if(allcourses[i].courseStart=="new"){
-formButton[i].innerHTML="Registration Form"
-} else {formButton[i].innerHTML="Course Tasks"} 
-}
-
 }
 
 function empty() {
@@ -1378,7 +1555,6 @@ export {
     titlteCourses,
     courseBranch,
     allcourses,
-    links,
     webDesign,
     webDesignNew,
     webDesignLaunched,
@@ -1396,6 +1572,9 @@ export {
     to,
     pagesContentItem,
     categories,
+    webdesignMain,
+    graphicedesignMain,
+    marketingMain,
     allCoursesF,
     webDesignF,
     webDesignNewF,
@@ -1407,5 +1586,5 @@ export {
     marketingNewF,
     marketingLaunchedF,
     empty,
+    coursesNav,
 }
-

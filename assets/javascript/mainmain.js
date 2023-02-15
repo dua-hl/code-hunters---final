@@ -18,6 +18,8 @@
 
 // }
 
+import {webdesignMain,categories,coursesNav,graphicedesignMain,marketingMain} from '../../main.js'
+
 // search input+button in navbar
 let searchButton=document.getElementById('searchbutton');
 let searchInput=document.getElementById('searchinput');
@@ -108,12 +110,16 @@ let closeWindow = document.querySelectorAll('.close')
 let allBgWindow=document.getElementById('all-bg-window');
 let navbar=document.getElementById('navbar');
 let windowHeader=document.getElementById('window-header');
+let butt1 =document.getElementById('butt1');
+let butt2 =document.getElementById('butt2')
 
 
 for(let i=0;i<windowContent.length;i++){
 
     about[i].addEventListener('click',function(){
         navbar.style.cssText='opacity:0';
+        butt1.style.cssText='opacity:0';
+        butt2.style.cssText='opacity:0';
         windowHeader.style.cssText='visibility:hidden';
         windowContent[i].classList.remove('visually-hidden');
         windowContent[i].style.cssText='animation-name: scaling;animation-duration: .7s;';
@@ -122,6 +128,8 @@ for(let i=0;i<windowContent.length;i++){
 
     closeWindow[i].addEventListener('click',function(){
         navbar.style.cssText='opacity:1';
+        butt1.style.cssText='opacity:1';
+        butt2.style.cssText='opacity:1';
         windowHeader.style.cssText='visibility:visibile';
         windowContent[i].style.cssText='animation-name: none;';
         windowContent[i].classList.add('visually-hidden');
@@ -195,25 +203,38 @@ function updated2(){
 
 
 // in-numbers:
-let alertSection = document.getElementById('alert');
+let alertSection = document.getElementById('alert');;
+let inNumbers = document.getElementById('in-numbers');
+let noItem = document.querySelectorAll('.no-item');
+let delay='';
 
-window.addEventListener('scroll',function display(){
+inNumbers.addEventListener('mouseenter',function display(){
 
-    if(window.scrollY==900){
-        setInterval(alertdisplay,4000);
-    }
+    setTimeout(alertdisplay,4000);
 
 })
+
+// clearTimeout(delay);
+
 
 function alertdisplay(){
 
     alertSection.classList.remove("visually-hidden");
     alertSection.classList.add("animate__animated","animate__heartBeat");
+    for(let i=0;i<noItem.length;i++){
+        noItem[i].classList.add('visually-hidden');
+    }
 }
 
 document.addEventListener('dblclick',function closealert(){
     alertSection.classList.add("visually-hidden");
+    for(let i=0;i<noItem.length;i++){
+        noItem[i].classList.remove('visually-hidden');
+    }
+    alertSection.classList.remove("animate__animated","animate__heartBeat");
+
 })
+
 
 
 // let closealert = document.getElementById('close');
@@ -233,7 +254,7 @@ let team = document.getElementById('team');
 let teamAnimation = document.getElementById('teamanimation')
 
 team.addEventListener('mouseenter',function animationHeart(){
-teamAnimation.classList.add('animate__bounceInUp');
+teamAnimation.classList.add('animate__fadeInUp');
 })
 
 
@@ -270,15 +291,16 @@ seeLess.addEventListener('click',function seeless(){
 
 // courses:
 
-let button4 = document.querySelectorAll('.button-4');
+webdesignMain();
 
-for(let i=0;i<button4.length;i++){
-if(button4[i].innerHTML=='All Level'){
-    button4[i].style.cssText="background-color:rgb(62, 174, 21,.5); border-color:rgb(62, 174, 21)"
-} else if (button4[i].innerHTML=='Begginer'){
-    button4[i].style.cssText="background-color:rgb(161, 87, 236,.6); border-color:rgb(161, 87, 236);"
-}
-}
+coursesNav[1].addEventListener('click',function(){
+    graphicedesignMain();
+})
+
+coursesNav[2].addEventListener('click',function(){
+    marketingMain();
+})
+
 
 
 // feedback
@@ -330,59 +352,114 @@ var message=document.getElementById("message")
 
 //validation
 firstName.onkeyup=function(){
-    pattern=/^[a-zA-Z]{2,10}$/
+   let pattern=/^[a-zA-Z]{3,10}$/
     if(pattern.test(firstName.value)){
         firstName.classList.remove('is-invalid')
       firstName.classList.add('is-valid')
+      if(firstName.value==''){
+        firstName.classList.remove('is-valid')
+        firstName.classList.remove('is-invalid')
+    }
     }
     
     else
     {
         firstName.classList.remove('is-valid')
         firstName.classList.add('is-invalid')
+        if(firstName.value==''){
+            firstName.classList.remove('is-valid')
+            firstName.classList.remove('is-invalid')
+        }
     }
 }
+
+firstName.addEventListener('blur',function(){
+    console.log('dua')
+    firstName.classList.remove('is-valid')
+    firstName.classList.remove('is-invalid')
+})
+
 lastName.onkeyup=function(){
-    pattern=/^[a-zA-Z]{2,10}$/
-    if(pattern.test(lastName.value)){
+    let pattern=/^[a-zA-Z]{3,10}$/
+     if(pattern.test(lastName.value)){
         lastName.classList.remove('is-invalid')
-      lastName.classList.add('is-valid')
-    }
-    
-    else
-    {
+        lastName.classList.add('is-valid')
+       if(lastName.value==''){
+        lastName.classList.remove('is-valid')
+        lastName.classList.remove('is-invalid')
+     }
+     }
+     
+     else
+     {
         lastName.classList.remove('is-valid')
         lastName.classList.add('is-invalid')
-    }
-}
+         if(lastName.value==''){
+            lastName.classList.remove('is-valid')
+            lastName.classList.remove('is-invalid')
+         }
+     }
+ }
+ 
+ lastName.addEventListener('blur',function(){
+     console.log('dua')
+     lastName.classList.remove('is-valid')
+     lastName.classList.remove('is-invalid')
+ })
 
-phone.onkeyup=function(){
-    pattern=/^\d{10}$/
+ phone.onkeyup=function(){
+    let pattern=/^[0-9]{8,15}$/;     
     if(pattern.test(phone.value)){
         phone.classList.remove('is-invalid')
-      phone.classList.add('is-valid')
-    }
-    
-    else
-    {
+        phone.classList.add('is-valid')
+       if(phone.value==''){
+        phone.classList.remove('is-valid')
+        phone.classList.remove('is-invalid')
+     }
+     }
+     
+     else
+     {
         phone.classList.remove('is-valid')
         phone.classList.add('is-invalid')
-    }
-}
+         if(phone.value==''){
+            phone.classList.remove('is-valid')
+            phone.classList.remove('is-invalid')
+         }
+     }
+ }
+
+ phone.addEventListener('blur',function(){
+    console.log('dua')
+    phone.classList.remove('is-valid')
+    phone.classList.remove('is-invalid')
+})
+
 message.onkeyup=function(){
-    pattern=/^[a-z]{2,50}$/
+    let pattern=/^[a-z]{0,100}$/;    
     if(pattern.test(message.value)){
+        
+       if(message.value==''){
+        message.classList.remove('is-valid')
         message.classList.remove('is-invalid')
-     message.classList.add('is-valid')
-    }
-    
-    else
-    {
+     }
+     }
+     
+     else
+     {
         message.classList.remove('is-valid')
         message.classList.add('is-invalid')
-    }
-}
+         if(message.value==''){
+            message.classList.remove('is-valid')
+            message.classList.remove('is-invalid')
+         }
+     }
+ }
 
+ message.addEventListener('blur',function(){
+    message.classList.remove('is-valid')
+    message.classList.remove('is-invalid')
+})
 
 document.getElementById("btn").addEventListener("click", function(event){
     event.preventDefault()
