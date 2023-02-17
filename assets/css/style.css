@@ -2081,13 +2081,59 @@ margin: 7px;
     font-size: .9rem;
 }
 
-/* .allcourses .content-right .content-right-item .neworlaunched .new img{
-    width: 17% !important;
-    position:absolute;
-    top:-29%;
-} */
 
 /* *********************************************** */
 
   
+/* **********************8 */
+/* registration form */
+.registration-form .navbar .nav-right::after{
+    background-color: rgb(90, 88, 88);
+}
+.registration-form .navbar{
+    background-color: rgb(90, 88, 88);
+}
+.registration-form .navbar h2 , .registration-form .navbar a{
+color:white; 
+font-family: 'Lilita One', cursive;
+}
 
+.registration-form .navbar a{
+    font-size: 1.5rem;
+}
+
+.registration-form .form-group div:first-child{
+    width:50% ;
+}
+
+.registration-form .form-group .less-width{
+    width:42% !important;
+}
+
+.container2{
+    margin:0 100px;
+    
+}
+
+.registration-form .allcourses{
+    margin-top:50px !important;
+    margin-bottom:100px !important;
+}
+
+.registration-form .btn-regist{
+    padding: 5px 25px;
+    background-color:rgb(90, 88, 88) ;
+    color: white;
+}
+
+.registration-form .btn-regist:hover{
+    background-color:rgb(90, 88, 88) ;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.registration-form h3{
+    font-size:.85rem;
+    color:rgba(114, 111, 111, 0.75);
+    font-weight: 500;
+}

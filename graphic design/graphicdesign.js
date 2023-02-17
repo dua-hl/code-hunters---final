@@ -9,7 +9,11 @@ for (let i=0;i<AllData.contentItem.length;i++){
     })
 }
 
-AllData.titelNav.innerHTML='Graphic Design';
+AllData.navbarDisplayF();
+let titelNav = document.getElementById('titelofnav');
+
+titelNav.innerHTML='Graphic Design'
+AllData.coursesMenu();
 AllData.empty();
 AllData.graphicDesignF();
-
+AllData.footerdisplayF();

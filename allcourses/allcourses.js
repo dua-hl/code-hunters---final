@@ -9,7 +9,10 @@ for (let i=0;i<AllData.contentItem.length;i++){
     })
 }
 
+AllData.navbarDisplayF();
+AllData.coursesMenu();
 AllData.categories();
 AllData.empty();
 AllData.allCoursesF();
+AllData.footerdisplayF();
 

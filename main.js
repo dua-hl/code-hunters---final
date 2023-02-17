@@ -1,10 +1,95 @@
+// navbar of courses
+let navbar = document.getElementById('navbar');
+
+function navbarDisplayF(){
+  navbar.innerHTML=`
+  <div class="container">
+  <div class="collapse navbar-collapse pb-2 d-flex" id="navbarSupportedContent">
+  <div class="nav-left col-10">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3 ps-4 animate__animated animate__fadeIn">
+    <li class="nav-item px-3">
+      <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+    </li>
+
+    <li class="m-auto">
+      <h2 id="titelofnav">All Courses</h2>
+    </li>
+  </ul>
+  </div>
+
+  <div class="nav-right col-2 text-end">
+  <form role="search" class="d-flex position-relative">
+      <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search" id="searchinput">
+      <a href="#" class=" position-relative" id="searchbutton">Search</a>
+      
+      <div id="searchdiv" class="searchdiv">
+      <div id="searchResult" class="searchResult">
+      </div>
+      <div class="closesearchresult" id="close">
+        <a><i class="fa-regular fa-circle-xmark position-fixed"></i></a> 
+      </div>
+      <div class="searchResult-arrow" id="searchResult-arrow"></div>
+      </div>
+
+      <div class="entervaluediv" id="entervaluediv">
+      <div id="entervalue" class=" entervalue">Enter a topic to search about</div>
+      <div class="entervalue-arrow" id="entervalue-arrow"></div>
+    </div>  
+  </form>
+  </div>
+  </div>
+  </div>
+  `
+
+}
+
+// courses
+// content left
+let coursePagesMenu=document.getElementById('courses-content-left')
+
+function coursesMenu(){
+
+  coursePagesMenu.innerHTML=`
+  <ul class="content-list">
+        <li class="content-item">
+            <div class="change-co1 titlte-ofcourses"> 
+            <a href="http://127.0.0.1:5500/webdesign/webdesign.html" class="p-2 links">Web Design</a>
+            </div>
+            <ul class="dropdown">
+                <a href="http://127.0.0.1:5500/webdesign/webnew.html" class="course-branch links"><li>New courses</li></a>
+                <a href="http://127.0.0.1:5500/webdesign/weblaunched.html" class="course-branch links"><li>Launched courses</li></a>
+            </ul>
+        </li>
+
+        <li class="content-item">
+            <div class="change-co2 titlte-ofcourses"> 
+            <a href="http://127.0.0.1:5500/graphic%20design/graphicdesign.html" class="p-2 links">Graphic Design</a>
+            </div>
+            <ul class="dropdown">
+                <a href="http://127.0.0.1:5500/graphic%20design/graphicnew.html" class="course-branch links" ><li>New courses</li></a>
+                <a href="http://127.0.0.1:5500/graphic%20design/graphiclaunched.html" class="course-branch links"><li>Launched courses</li></a>
+            </ul>
+        </li>
+
+        <li class="content-item">
+            <div class="change-co3 titlte-ofcourses"> 
+            <a href="http://127.0.0.1:5500/marketing/marketing.html" class="p-2 links">Marketing</a>
+            </div>
+            <ul class="dropdown" >
+                <a href="http://127.0.0.1:5500/marketing/marketingnew.html" class="course-branch links"><li>New courses</li></a>
+                <a href="http://127.0.0.1:5500/marketing/marketinglaunched.html" class="course-branch links"><li>Launched courses</li></a>
+            </ul>
+        </li>
+    </ul>`
+}
+
+
+
+
 let contentItem = document.querySelectorAll('.content-item');
 let dropdown = document.querySelectorAll('.dropdown');
 
-let titelNav = document.getElementById('titelofnav');
 let titlteCourses = document.querySelectorAll('.titlte-ofcourses');
-let navbar = document.getElementById('navbar');
-let formButton = document.querySelectorAll('.form-button');
 
 let courseBranch = document.querySelectorAll('course-branch');
 let carouselPoints = document.getElementById("carouselpoints");
@@ -516,7 +601,7 @@ let formButton = document.querySelectorAll('.form-button');
 for (let i = 0; i < (allcourses.length); i++) {
 
 if(allcourses[i].courseStart=="new"){
-formButton[i].innerHTML="Registration Form"
+formButton[i].innerHTML="<a href='http://127.0.0.1:5500/registration%20form/regform.html'>Registration Form</a>"
 } else {formButton[i].innerHTML="Course Tasks"} 
 }
 }
@@ -558,13 +643,12 @@ function webDesignF() {
 
         pagesContentItem = '';
         for (let j = from; j < to; j++) {
-
             if (j > webDesign.length) {
                 to=webDesign.length;
               }            
 
             pagesContentItem += `
-        <div class="${webDesign[j].courseCategory}" id="${webDesign[j].courseID}">
+        <div class="${webDesign[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${webDesign[j].courseName}<span class="${webDesign[j].courseStart} ms-4">NEW</span></h3>
@@ -617,7 +701,6 @@ function webDesignF() {
       </div> 
         `;
         }
-        console.log(window.location.hash)
 
         pagesClass[i].innerHTML = pagesContentItem;
 
@@ -633,7 +716,7 @@ function webDesignF() {
         for (let k = 0; k < (webDesign.length); k++) {
     
           if(webDesign[k].courseStart=="new"){
-          formButton[k].innerHTML="Registration Form"
+          formButton[k].innerHTML="<a href='http://127.0.0.1:5500/registration%20form/regform.html'>Registration Form</a>"
           } else {formButton[k].innerHTML="View Tasks"} 
           }
 
@@ -687,7 +770,7 @@ function webDesignNewF() {
             }
 
             pagesContentItem += `
-        <div class="${webDesignNew[j].courseCategory}" id="${webDesignNew[j].courseCategory}">
+        <div class="${webDesignNew[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${webDesignNew[j].courseName}<span class="${webDesignNew[j].courseStart} ms-4">NEW</span></h3>
@@ -726,7 +809,7 @@ function webDesignNewF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="#">Registraion Form</a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="http://127.0.0.1:5500/registration%20form/regform.html">Registraion Form</a></button>
                 </div>
   
               </div>
@@ -796,7 +879,7 @@ function webDesignLaunchedF() {
           } 
 
             pagesContentItem += `
-        <div class="${webDesignLaunched[j].courseCategory}" id="${webDesignLaunched[j].courseCategory}">
+        <div class="${webDesignLaunched[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${webDesignLaunched[j].courseName}<span class="${webDesignLaunched[j].courseStart} ms-4">NEW</span></h3>
@@ -908,7 +991,7 @@ function graphicDesignF() {
 
     for(let j=from;j<to;j++){
         pagesContentItem+=`
-        <div class="${graphicDesign[j].courseCategory}" id="${graphicDesign[j].courseID}">
+        <div class="${graphicDesign[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesign[j].courseName}<span class="${graphicDesign[j].courseStart} ms-4">NEW</span></h3>
@@ -976,7 +1059,7 @@ for (let k = 0; k < (graphicDesign.length); k++) {
 
 
 if(graphicDesign[k].courseStart=="new"){
-formButton[k].innerHTML="Registration Form"
+formButton[k].innerHTML="<a href='http://127.0.0.1:5500/registration%20form/regform.html'>Registration Form</a>"
 } else {formButton[k].innerHTML="View Tasks"} 
 }
 
@@ -1027,7 +1110,7 @@ function graphicDesignNewF() {
         }
  
         pagesContentItem+=`
-        <div class="${graphicDesignNew[j].courseCategory}" id="${graphicDesignNew[j].courseCategory}">
+        <div class="${graphicDesignNew[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesignNew[j].courseName}<span class="${graphicDesignNew[j].courseStart} ms-4">NEW</span></h3>
@@ -1066,7 +1149,7 @@ function graphicDesignNewF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="#">Registraion Form</a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="http://127.0.0.1:5500/registration%20form/regform.html">Registraion Form</a></button>
                 </div>
   
               </div>
@@ -1138,7 +1221,7 @@ function graphicDesignLaunchedF() {
         }
  
         pagesContentItem+=`
-        <div class="${graphicDesignLaunched[j].courseCategory}" id="${graphicDesignLaunched[j].courseCategory}">
+        <div class="${graphicDesignLaunched[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesignLaunched[j].courseName}<span class="${graphicDesignLaunched[j].courseStart} ms-4">NEW</span></h3>
@@ -1243,7 +1326,7 @@ function marketingF() {
           }
 
           pagesContentItem += `
-      <div class="${marketing[j].courseCategory}" id="${marketing[j].courseID}">
+      <div class="${marketing[j].courseCategory}">
       <div class="content-right-item d-flex">
       <div class="py-3 col-8">
       <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${marketing[j].courseName}<span class="${marketing[j].courseStart} ms-4">NEW</span></h3>
@@ -1306,10 +1389,10 @@ function marketingF() {
 
 let formButton = document.querySelectorAll('.form-button');
 
-for (let i = 0; i < (allcourses.length); i++) {
+for (let i = 0; i < (marketing.length); i++) {
 
-if(allcourses[i].courseStart=="new"){
-formButton[i].innerHTML="Registration Form"
+if(marketing[i].courseStart=="new"){
+formButton[i].innerHTML="<a href='http://127.0.0.1:5500/registration%20form/regform.html'>Registration Form</a>"
 } else {formButton[i].innerHTML="Course Tasks"} 
 }
 }
@@ -1358,7 +1441,7 @@ function marketingNewF() {
       }
  
         pagesContentItem+=`
-        <div class="${marketingNew[j].courseCategory}" id="${marketingNew[j].courseCategory}">
+        <div class="${marketingNew[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${marketingNew[j].courseName}<span class="${marketingNew[j].courseStart} ms-4">NEW</span></h3>
@@ -1397,7 +1480,7 @@ function marketingNewF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="#">Registraion Form</a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="http://127.0.0.1:5500/registration%20form/regform.html">Registraion Form</a></button>
                 </div>
   
               </div>
@@ -1470,7 +1553,7 @@ function marketingLaunchedF() {
         }
  
         pagesContentItem+=`
-        <div class="${marketingLaunched[j].courseCategory}" id="${marketingLaunched[j].courseCategory}">
+        <div class="${marketingLaunched[j].courseCategory}">
         <div class="content-right-item d-flex">
         <div class="py-3 col-8">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${marketingLaunched[j].courseName}<span class="${marketingLaunched[j].courseStart} ms-4">NEW</span></h3>
@@ -1548,10 +1631,228 @@ function empty() {
     allPages.innerHTML = '';
 }
 
+// registration form
+let selectCourse=document.getElementById('inputState');
+let options='';
+
+function selectCourseF(){
+for(let i=0;i<allcourses.length;i++){
+  options+=`
+  <option>${allcourses[i].courseName}</option>
+  `
+}
+
+  selectCourse.innerHTML= `<option selected>Choose...</option>`+options
+}
+
+// validation
+var firstName=document.getElementById("firstName")
+var lastName=document.getElementById("lastName")
+var phone=document.getElementById("phone")
+var message=document.getElementById("message")
+
+function firsNAmeVal(){
+firstName.onkeyup=function(){
+  let pattern=/^[a-zA-Z]{3,10}$/
+   if(pattern.test(firstName.value)){
+       firstName.classList.remove('is-invalid')
+     firstName.classList.add('is-valid')
+     if(firstName.value==''){
+       firstName.classList.remove('is-valid')
+       firstName.classList.remove('is-invalid')
+   }
+   }
+   
+   else
+   {
+       firstName.classList.remove('is-valid')
+       firstName.classList.add('is-invalid')
+       if(firstName.value==''){
+           firstName.classList.remove('is-valid')
+           firstName.classList.remove('is-invalid')
+       }
+   }
+}
+
+
+firstName.addEventListener('blur',function(){
+   console.log('dua')
+   firstName.classList.remove('is-valid')
+   firstName.classList.remove('is-invalid')
+})
+}
+
+function lastNAmeVal(){
+lastName.onkeyup=function(){
+   let pattern=/^[a-zA-Z]{3,10}$/
+    if(pattern.test(lastName.value)){
+       lastName.classList.remove('is-invalid')
+       lastName.classList.add('is-valid')
+      if(lastName.value==''){
+       lastName.classList.remove('is-valid')
+       lastName.classList.remove('is-invalid')
+    }
+    }
+    
+    else
+    {
+       lastName.classList.remove('is-valid')
+       lastName.classList.add('is-invalid')
+        if(lastName.value==''){
+           lastName.classList.remove('is-valid')
+           lastName.classList.remove('is-invalid')
+        }
+    }
+}
+
+lastName.addEventListener('blur',function(){
+    console.log('dua')
+    lastName.classList.remove('is-valid')
+    lastName.classList.remove('is-invalid')
+})
+}
+
+function PhoneVal(){
+phone.onkeyup=function(){
+   let pattern=/^[0-9]{8,15}$/;     
+   if(pattern.test(phone.value)){
+       phone.classList.remove('is-invalid')
+       phone.classList.add('is-valid')
+      if(phone.value==''){
+       phone.classList.remove('is-valid')
+       phone.classList.remove('is-invalid')
+    }
+    }
+    
+    else
+    {
+       phone.classList.remove('is-valid')
+       phone.classList.add('is-invalid')
+        if(phone.value==''){
+           phone.classList.remove('is-valid')
+           phone.classList.remove('is-invalid')
+        }
+    }
+}
+
+phone.addEventListener('blur',function(){
+   console.log('dua')
+   phone.classList.remove('is-valid')
+   phone.classList.remove('is-invalid')
+})
+}
+
+function messageVal(){
+message.onkeyup=function(){
+   let pattern=/^[a-z]{0,100}$/;    
+   if(pattern.test(message.value)){
+       
+      if(message.value==''){
+       message.classList.remove('is-valid')
+       message.classList.remove('is-invalid')
+    }
+    }
+    
+    else
+    {
+       message.classList.remove('is-valid')
+       message.classList.add('is-invalid')
+        if(message.value==''){
+           message.classList.remove('is-valid')
+           message.classList.remove('is-invalid')
+        }
+    }
+}
+
+message.addEventListener('blur',function(){
+   message.classList.remove('is-valid')
+   message.classList.remove('is-invalid')
+})
+}
+
+// footer
+let footerDisplay=document.getElementById('footer')
+
+function footerdisplayF(){
+footerDisplay.innerHTML=`
+<div class="container">
+  
+  <div class="f-item d-flex">
+  <div class="col-3">
+  <a href="#">
+  <img src="../assets/images/logo.png" alt="logo" class="w-100">
+  </a>
+  </div> 
+
+  <div class="col-9">
+  <h3 class="text-start searchContent">Knowledge Academy</h3>
+  <p class="text-start searchContent">Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
+  </div>
+
+  </div>
+  
+  <div class="f-item">
+  <h3 class="searchContent">Quick Links</h3>
+  <ul>
+  <li class="f-list-item">
+      <a href="./allcourses/allcourses.html" class="searchContent">All courses</a>
+  </li>
+  
+  <li class="f-list-item">
+    <a href="#team" class="searchContent">Our team</a>
+  </li>
+  
+  <li class="f-list-item">
+      <a href="#header" class="searchContent">Home</a>
+  </li>
+
+  </ul>
+  </div>
+  
+  <div class="f-item">
+      <h3 class="searchContent">Programs</h3>
+      <ul>
+      <li class="f-list-item">
+          <a target="_blank" href="https://code.visualstudio.com/" class="searchContent">Visual Studio Code</a>
+      </li>
+      
+      <li class="f-list-item">
+          <a target="_blank" href="https://visualstudio.microsoft.com/free-developer-offers/" class="searchContent">Visual Studio</a>
+      </li>
+      
+      <li class="f-list-item">
+          <a target="_blank" href="https://sourceforge.net/projects/codeblocks/" class="searchContent">Code blocks</a>
+      </li>
+      
+      </ul>
+  </div>
+  
+  <div class="f-item">
+      <h3 class="searchContent">Contact</h3>
+      <ul>
+      <li class="f-list-item">
+          <a target="_blank" href="https://wa.me/+970592100103" class="searchContent">Whatsapp Number</a>
+      </li>
+      
+      <li class="f-list-item">
+          <a target="_blank" href="mailto:Knowledgeacademy@gmail.com" class="searchContent">Email Adress</a>
+      </li>
+
+      <li class="f-list-item">
+        <a target="_blank" href="https://www.facebook.com/eknowledge.learn/" class="searchContent">Facebook Page</a>
+      </li>
+       
+      </ul>
+  </div>
+  
+  </div>
+`
+console.log('dua')
+}
+
 export {
     contentItem,
     dropdown,
-    titelNav,
     titlteCourses,
     courseBranch,
     allcourses,
@@ -1571,6 +1872,7 @@ export {
     from,
     to,
     pagesContentItem,
+    coursesMenu,
     categories,
     webdesignMain,
     graphicedesignMain,
@@ -1586,5 +1888,12 @@ export {
     marketingNewF,
     marketingLaunchedF,
     empty,
+    selectCourseF,
+    messageVal,
+    PhoneVal,
+    lastNAmeVal,
+    firsNAmeVal,
+    navbarDisplayF,
+    footerdisplayF,
     coursesNav,
 }

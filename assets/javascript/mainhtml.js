@@ -1,24 +1,5 @@
-// in numbers section
-// counter:
-// let content = document.getElementById('content').innerHTML;
 
-// let counter=0;
-
-// let myInterval=setInterval(display);
-
-
-// function display(){
-
-//     counter++;
-//     content=counter;
-//     console.log(content);
-//     if(counter>=100){
-//     clearInterval(myInterval);
-//     }
-
-// }
-
-import {webdesignMain,categories,coursesNav,graphicedesignMain,marketingMain} from '../../main.js'
+import * as AllData from '../../main.js'
 
 // search input+button in navbar
 let searchButton=document.getElementById('searchbutton');
@@ -237,18 +218,6 @@ document.addEventListener('dblclick',function closealert(){
 
 
 
-// let closealert = document.getElementById('close');
-
-// closealert.addEventListener('click', function alertremove(){
-//     alertSection.classList.add("visually-hidden");
-//     upto0=0;
-//     upto1=0;
-//     upto2=0;
-// })
-
-// closealert.addEventListener('click', clearInterval(alertdisplay));
-
-
 // team
 let team = document.getElementById('team');
 let teamAnimation = document.getElementById('teamanimation')
@@ -291,14 +260,14 @@ seeLess.addEventListener('click',function seeless(){
 
 // courses:
 
-webdesignMain();
+AllData.webdesignMain();
 
-coursesNav[1].addEventListener('click',function(){
-    graphicedesignMain();
+AllData.coursesNav[1].addEventListener('click',function(){
+    AllData.graphicedesignMain();
 })
 
-coursesNav[2].addEventListener('click',function(){
-    marketingMain();
+AllData.coursesNav[2].addEventListener('click',function(){
+    AllData.marketingMain();
 })
 
 
@@ -344,132 +313,21 @@ clear2.addEventListener('click', function clear2(){
 
 // contact us section
 // contact us section
-var firstName=document.getElementById("firstName")
-var lastName=document.getElementById("lastName")
-var phone=document.getElementById("phone")
-var message=document.getElementById("message")
 
-
-//validation
-firstName.onkeyup=function(){
-   let pattern=/^[a-zA-Z]{3,10}$/
-    if(pattern.test(firstName.value)){
-        firstName.classList.remove('is-invalid')
-      firstName.classList.add('is-valid')
-      if(firstName.value==''){
-        firstName.classList.remove('is-valid')
-        firstName.classList.remove('is-invalid')
-    }
-    }
-    
-    else
-    {
-        firstName.classList.remove('is-valid')
-        firstName.classList.add('is-invalid')
-        if(firstName.value==''){
-            firstName.classList.remove('is-valid')
-            firstName.classList.remove('is-invalid')
-        }
-    }
-}
-
-firstName.addEventListener('blur',function(){
-    console.log('dua')
-    firstName.classList.remove('is-valid')
-    firstName.classList.remove('is-invalid')
-})
-
-lastName.onkeyup=function(){
-    let pattern=/^[a-zA-Z]{3,10}$/
-     if(pattern.test(lastName.value)){
-        lastName.classList.remove('is-invalid')
-        lastName.classList.add('is-valid')
-       if(lastName.value==''){
-        lastName.classList.remove('is-valid')
-        lastName.classList.remove('is-invalid')
-     }
-     }
-     
-     else
-     {
-        lastName.classList.remove('is-valid')
-        lastName.classList.add('is-invalid')
-         if(lastName.value==''){
-            lastName.classList.remove('is-valid')
-            lastName.classList.remove('is-invalid')
-         }
-     }
- }
- 
- lastName.addEventListener('blur',function(){
-     console.log('dua')
-     lastName.classList.remove('is-valid')
-     lastName.classList.remove('is-invalid')
- })
-
- phone.onkeyup=function(){
-    let pattern=/^[0-9]{8,15}$/;     
-    if(pattern.test(phone.value)){
-        phone.classList.remove('is-invalid')
-        phone.classList.add('is-valid')
-       if(phone.value==''){
-        phone.classList.remove('is-valid')
-        phone.classList.remove('is-invalid')
-     }
-     }
-     
-     else
-     {
-        phone.classList.remove('is-valid')
-        phone.classList.add('is-invalid')
-         if(phone.value==''){
-            phone.classList.remove('is-valid')
-            phone.classList.remove('is-invalid')
-         }
-     }
- }
-
- phone.addEventListener('blur',function(){
-    console.log('dua')
-    phone.classList.remove('is-valid')
-    phone.classList.remove('is-invalid')
-})
-
-message.onkeyup=function(){
-    let pattern=/^[a-z]{0,100}$/;    
-    if(pattern.test(message.value)){
-        
-       if(message.value==''){
-        message.classList.remove('is-valid')
-        message.classList.remove('is-invalid')
-     }
-     }
-     
-     else
-     {
-        message.classList.remove('is-valid')
-        message.classList.add('is-invalid')
-         if(message.value==''){
-            message.classList.remove('is-valid')
-            message.classList.remove('is-invalid')
-         }
-     }
- }
-
- message.addEventListener('blur',function(){
-    message.classList.remove('is-valid')
-    message.classList.remove('is-invalid')
-})
+AllData.messageVal()
+AllData.PhoneVal()
+AllData.lastNAmeVal()
+AllData.firsNAmeVal()
 
 document.getElementById("btn").addEventListener("click", function(event){
     event.preventDefault()
     firstName.value=''
     lastName.value=''
-phone.value=''
-message.value=''
+    phone.value=''
+    message.value=''
     Swal.fire(
         'Thank you!',
-        'Your message sent successfuly',
+        'Your information sent successfuly',
         'success'
       )
   });

@@ -9,7 +9,12 @@ for (let i=0;i<AllData.contentItem.length;i++){
     })
 }
 
-AllData.titelNav.innerHTML='Marketing - Launched Courses';
+AllData.navbarDisplayF();
+let titelNav = document.getElementById('titelofnav');
+
+titelNav.innerHTML='Marketing - Launched Courses';
+AllData.coursesMenu();
 AllData.empty();
 AllData.marketingLaunchedF();
+AllData.footerdisplayF();
 

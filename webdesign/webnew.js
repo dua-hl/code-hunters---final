@@ -9,7 +9,12 @@ for (let i=0;i<AllData.contentItem.length;i++){
     })
 }
 
-AllData.titelNav.innerHTML='Web Design - New Courses';
+AllData.navbarDisplayF();
+let titelNav = document.getElementById('titelofnav');
+
+titelNav.innerHTML='Web Design - New Courses';
+AllData.coursesMenu();
 AllData.empty();
 AllData.webDesignNewF();
+AllData.footerdisplayF();
 
