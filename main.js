@@ -4,14 +4,14 @@ let navbar = document.getElementById('navbar');
 function navbarDisplayF(){
   navbar.innerHTML=`
   <div class="container">
-  <div class="collapse navbar-collapse pb-2 d-flex" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse pb-lg-2 pb-md-0 d-flex" id="navbarSupportedContent">
   <div class="nav-left col-10">
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3 ps-4 animate__animated animate__fadeIn">
-    <li class="nav-item px-3">
+  <ul class="d-flex flex-row pt-md-2 navbar-nav me-auto mb-2 mb-lg-0 gap-3 ps-4 animate__animated animate__fadeIn">
+    <li class="nav-item px-md-0 col-md-3">
       <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
     </li>
 
-    <li class="m-auto">
+    <li class="m-auto col-md-9 text-center">
       <h2 id="titelofnav">All Courses</h2>
     </li>
   </ul>
@@ -53,38 +53,37 @@ function coursesMenu(){
   <ul class="content-list">
         <li class="content-item">
             <div class="change-co1 titlte-ofcourses"> 
-            <a href="http://127.0.0.1:5500/webdesign/webdesign.html" class="p-2 links">Web Design</a>
+            <a href="../webdesign/webdesign.html" class="p-2 links">Web Design</a>
             </div>
             <ul class="dropdown">
-                <a href="http://127.0.0.1:5500/webdesign/webnew.html" class="course-branch links"><li>New courses</li></a>
-                <a href="http://127.0.0.1:5500/webdesign/weblaunched.html" class="course-branch links"><li>Launched courses</li></a>
+                <a href="../webdesign/webnew.html" class="course-branch links"><li>New courses</li></a>
+                <a href="../webdesign/weblaunched.html" class="course-branch links"><li>Launched courses</li></a>
             </ul>
         </li>
 
         <li class="content-item">
             <div class="change-co2 titlte-ofcourses"> 
-            <a href="http://127.0.0.1:5500/graphic%20design/graphicdesign.html" class="p-2 links">Graphic Design</a>
+            <a href="../graphic design/graphicdesign.html" class="p-2 links">Graphic Design</a>
             </div>
             <ul class="dropdown">
-                <a href="http://127.0.0.1:5500/graphic%20design/graphicnew.html" class="course-branch links" ><li>New courses</li></a>
-                <a href="http://127.0.0.1:5500/graphic%20design/graphiclaunched.html" class="course-branch links"><li>Launched courses</li></a>
+                <a href="../graphic design/graphicnew.html" class="course-branch links" ><li>New courses</li></a>
+                <a href="../graphic design/graphiclaunched.html" class="course-branch links"><li>Launched courses</li></a>
             </ul>
         </li>
 
         <li class="content-item">
             <div class="change-co3 titlte-ofcourses"> 
-            <a href="http://127.0.0.1:5500/marketing/marketing.html" class="p-2 links">Marketing</a>
+            <a href="../marketing/marketing.html" class="p-2 links">Marketing</a>
             </div>
             <ul class="dropdown" >
-                <a href="http://127.0.0.1:5500/marketing/marketingnew.html" class="course-branch links"><li>New courses</li></a>
-                <a href="http://127.0.0.1:5500/marketing/marketinglaunched.html" class="course-branch links"><li>Launched courses</li></a>
+                <a href="../marketing/marketingnew.html" class="course-branch links"><li>New courses</li></a>
+                <a href="../marketing/marketinglaunched.html" class="course-branch links"><li>Launched courses</li></a>
             </ul>
         </li>
     </ul>`
 }
 
-
-
+// content right
 
 let contentItem = document.querySelectorAll('.content-item');
 let dropdown = document.querySelectorAll('.dropdown');
@@ -187,6 +186,20 @@ let allcourses = [
         startDate: "2-3-2023"
 
     }
+    ,
+    {
+      courseID:"c6",
+      courseCategory: "graphicdesig",
+      courseName: "Photoshop",
+      courseCaptionmain:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia",
+      courseCaption: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi, culpa facilis porro a nobis corrupti rerum nisi perspiciatis molestiae laborum ducimus. Repudiandae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, earum veritatis? Facere qui mollitia voluptatum sequi modi,",
+      courseTrainer: "Tariq Shreem",
+      coursePrice: "250$",
+      courseTime: "3 lecture/week",
+      courseStart: "new",
+      startDate: "2-3-2023"
+
+  }
     ,
     {
         courseID:"c7",
@@ -423,7 +436,7 @@ for(let i=0;i<6;i++){
 
   <div class="col-8">
   <div class="courses-underimg">
-  <a href="http://127.0.0.1:5500/graphic%20design/graphicdesign.html#${graphicDesign[i].courseID}" class="searchContent">${graphicDesign[i].courseName}</a>
+  <a href="./graphic design/graphicdesign.html#${graphicDesign[i].courseID}" class="searchContent">${graphicDesign[i].courseName}</a>
   <p class="searchContent">${graphicDesign[i].courseCaptionmain}</p>
   </div>
 </div>
@@ -472,7 +485,7 @@ for(let i=0;i<6;i++){
 
   <div class="col-8">
   <div class="courses-underimg">
-  <a href="http://127.0.0.1:5500/marketing/marketing.html#${marketing[i].courseID}" class="searchContent">${marketing[i].courseName}</a>
+  <a href="./marketing/marketing.html#${marketing[i].courseID}" class="searchContent">${marketing[i].courseName}</a>
   <p class="searchContent">${marketing[i].courseCaptionmain}</p>
   </div>
 </div>
@@ -537,13 +550,13 @@ function allCoursesF() {
 
             pagesContentItem += `
         <div class="${allcourses[j].courseCategory}" id="${allcourses[j].courseID}">
-        <div class="content-right-item d-flex">
-        <div class="py-3 col-8">
+        <div class="content-right-item d-lg-flex">
+        <div class="py-3 col-lg-8 padding-md">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${allcourses[j].courseName}<span class="${allcourses[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${allcourses[j].courseCaption}</p>
         </div>
   
-            <div class="course-item-desc col-4">
+            <div class="course-item-desc col-lg-4">
             <div>
             <div>
                 <div class="px-3 py-3" id="bordertop">
@@ -648,15 +661,15 @@ function webDesignF() {
               }            
 
             pagesContentItem += `
-        <div class="${webDesign[j].courseCategory}">
-        <div class="content-right-item d-flex">
-        <div class="py-3 col-8">
+        <div class="${webDesign[j].courseCategory}" id="${webDesign[j].courseID}">
+        <div class="content-right-item d-lg-flex">
+        <div class="py-3 col-lg-8 padding-md">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${webDesign[j].courseName}<span class="${webDesign[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${webDesign[j].courseCaption}</p>
         </div>
   
       
-        <div class="course-item-desc col-4">
+        <div class="course-item-desc col-lg-4">
             <div>
             <div>
                 <div class="px-3 py-3" id="bordertop">
@@ -716,7 +729,7 @@ function webDesignF() {
         for (let k = 0; k < (webDesign.length); k++) {
     
           if(webDesign[k].courseStart=="new"){
-          formButton[k].innerHTML="<a href='http://127.0.0.1:5500/registration%20form/regform.html'>Registration Form</a>"
+          formButton[k].innerHTML="<a href='../registration form/regform.html'>Registration Form</a>"
           } else {formButton[k].innerHTML="View Tasks"} 
           }
 
@@ -771,14 +784,14 @@ function webDesignNewF() {
 
             pagesContentItem += `
         <div class="${webDesignNew[j].courseCategory}">
-        <div class="content-right-item d-flex">
-        <div class="py-3 col-8">
+        <div class="content-right-item d-lg-flex">
+        <div class="py-3 col-lg-8 padding-md">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${webDesignNew[j].courseName}<span class="${webDesignNew[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${webDesignNew[j].courseCaption}</p>
         </div>
   
       
-        <div class="course-item-desc col-4">
+        <div class="course-item-desc col-lg-4">
             <div>
             <div>
                 <div class="px-3 py-3" id="bordertop">
@@ -809,7 +822,7 @@ function webDesignNewF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="http://127.0.0.1:5500/registration%20form/regform.html">Registraion Form</a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="../registration form/regform.html">Registraion Form</a></button>
                 </div>
   
               </div>
@@ -880,14 +893,14 @@ function webDesignLaunchedF() {
 
             pagesContentItem += `
         <div class="${webDesignLaunched[j].courseCategory}">
-        <div class="content-right-item d-flex">
-        <div class="py-3 col-8">
+        <div class="content-right-item d-lg-flex">
+        <div class="py-3 col-lg-8 padding-md">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${webDesignLaunched[j].courseName}<span class="${webDesignLaunched[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${webDesignLaunched[j].courseCaption}</p>
         </div>
   
       
-        <div class="course-item-desc col-4">
+        <div class="course-item-desc col-lg-4">
             <div>
             <div>
                 <div class="px-3 py-3" id="bordertop">
@@ -991,15 +1004,15 @@ function graphicDesignF() {
 
     for(let j=from;j<to;j++){
         pagesContentItem+=`
-        <div class="${graphicDesign[j].courseCategory}">
-        <div class="content-right-item d-flex">
-        <div class="py-3 col-8">
+        <div class="${graphicDesign[j].courseCategory}" id="${graphicDesign[j].courseID}">
+        <div class="content-right-item d-lg-flex">
+        <div class="py-3 col-lg-8 padding-md">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesign[j].courseName}<span class="${graphicDesign[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${graphicDesign[j].courseCaption}</p>
         </div>
   
       
-        <div class="course-item-desc col-4">
+        <div class="course-item-desc col-lg-4">
             <div>
             <div>
                 <div class="px-3 py-3" id="bordertop">
@@ -1059,7 +1072,7 @@ for (let k = 0; k < (graphicDesign.length); k++) {
 
 
 if(graphicDesign[k].courseStart=="new"){
-formButton[k].innerHTML="<a href='http://127.0.0.1:5500/registration%20form/regform.html'>Registration Form</a>"
+formButton[k].innerHTML="<a href='../registration form/regform.html'>Registration Form</a>"
 } else {formButton[k].innerHTML="View Tasks"} 
 }
 
@@ -1111,14 +1124,14 @@ function graphicDesignNewF() {
  
         pagesContentItem+=`
         <div class="${graphicDesignNew[j].courseCategory}">
-        <div class="content-right-item d-flex">
-        <div class="py-3 col-8">
+        <div class="content-right-item d-lg-flex">
+        <div class="py-3 col-lg-8 padding-md">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesignNew[j].courseName}<span class="${graphicDesignNew[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${graphicDesignNew[j].courseCaption}</p>
         </div>
   
       
-        <div class="course-item-desc col-4">
+        <div class="course-item-desc col-lg-4">
             <div>
             <div>
                 <div class="px-3 py-3" id="bordertop">
@@ -1149,7 +1162,7 @@ function graphicDesignNewF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="http://127.0.0.1:5500/registration%20form/regform.html">Registraion Form</a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="../registration form/regform.html">Registraion Form</a></button>
                 </div>
   
               </div>
@@ -1222,14 +1235,14 @@ function graphicDesignLaunchedF() {
  
         pagesContentItem+=`
         <div class="${graphicDesignLaunched[j].courseCategory}">
-        <div class="content-right-item d-flex">
-        <div class="py-3 col-8">
+        <div class="content-right-item d-lg-flex">
+        <div class="py-3 col-lg-8 padding-md">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${graphicDesignLaunched[j].courseName}<span class="${graphicDesignLaunched[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${graphicDesignLaunched[j].courseCaption}</p>
         </div>
   
       
-        <div class="course-item-desc col-4">
+        <div class="course-item-desc col-lg-4">
             <div>
             <div>
                 <div class="px-3 py-3" id="bordertop">
@@ -1326,15 +1339,15 @@ function marketingF() {
           }
 
           pagesContentItem += `
-      <div class="${marketing[j].courseCategory}">
-      <div class="content-right-item d-flex">
-      <div class="py-3 col-8">
+      <div class="${marketing[j].courseCategory}" id="${marketing[j].courseID}">
+      <div class="content-right-item d-lg-flex">
+      <div class="py-3 col-lg-8 padding-md">
       <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${marketing[j].courseName}<span class="${marketing[j].courseStart} ms-4">NEW</span></h3>
       <p class="searchContent" id="coursecaption">${marketing[j].courseCaption}</p>
       </div>
 
     
-      <div class="course-item-desc col-4">
+      <div class="course-item-desc col-lg-4">
           <div>
           <div>
               <div class="px-3 py-3" id="bordertop">
@@ -1392,7 +1405,7 @@ let formButton = document.querySelectorAll('.form-button');
 for (let i = 0; i < (marketing.length); i++) {
 
 if(marketing[i].courseStart=="new"){
-formButton[i].innerHTML="<a href='http://127.0.0.1:5500/registration%20form/regform.html'>Registration Form</a>"
+formButton[i].innerHTML="<a href='../registration form/regform.html'>Registration Form</a>"
 } else {formButton[i].innerHTML="Course Tasks"} 
 }
 }
@@ -1442,14 +1455,14 @@ function marketingNewF() {
  
         pagesContentItem+=`
         <div class="${marketingNew[j].courseCategory}">
-        <div class="content-right-item d-flex">
-        <div class="py-3 col-8">
+        <div class="content-right-item d-lg-flex">
+        <div class="py-3 col-lg-8 padding-md">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${marketingNew[j].courseName}<span class="${marketingNew[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${marketingNew[j].courseCaption}</p>
         </div>
   
       
-        <div class="course-item-desc col-4">
+        <div class="course-item-desc col-lg-4">
             <div>
             <div>
                 <div class="px-3 py-3" id="bordertop">
@@ -1480,7 +1493,7 @@ function marketingNewF() {
   
                 <div class="w-100 buttons pt-3 text-center">
                   <button class="my-2 w-75 text-capitalize"><a href="#">Download Course Plan</a></button>
-                  <button class="w-75 text-capitalize form-button"><a href="http://127.0.0.1:5500/registration%20form/regform.html">Registraion Form</a></button>
+                  <button class="w-75 text-capitalize form-button"><a href="../registration form/regform.html">Registraion Form</a></button>
                 </div>
   
               </div>
@@ -1554,14 +1567,14 @@ function marketingLaunchedF() {
  
         pagesContentItem+=`
         <div class="${marketingLaunched[j].courseCategory}">
-        <div class="content-right-item d-flex">
-        <div class="py-3 col-8">
+        <div class="content-right-item d-lg-flex">
+        <div class="py-3 col-lg-8 padding-md">
         <h3 class="searchContent neworlaunched text-capitalize" id="coursename">${marketingLaunched[j].courseName}<span class="${marketingLaunched[j].courseStart} ms-4">NEW</span></h3>
         <p class="searchContent" id="coursecaption">${marketingLaunched[j].courseCaption}</p>
         </div>
   
       
-        <div class="course-item-desc col-4">
+        <div class="course-item-desc col-lg-4">
             <div>
             <div>
                 <div class="px-3 py-3" id="bordertop">
@@ -1872,6 +1885,7 @@ export {
     from,
     to,
     pagesContentItem,
+    coursesNav,
     coursesMenu,
     categories,
     webdesignMain,
@@ -1895,5 +1909,4 @@ export {
     firsNAmeVal,
     navbarDisplayF,
     footerdisplayF,
-    coursesNav,
 }

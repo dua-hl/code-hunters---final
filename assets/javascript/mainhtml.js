@@ -183,6 +183,8 @@ function updated2(){
     setInterval(updated2,80);
 
 
+
+
 // in-numbers:
 let alertSection = document.getElementById('alert');;
 let inNumbers = document.getElementById('in-numbers');
@@ -191,7 +193,7 @@ let delay='';
 
 inNumbers.addEventListener('mouseenter',function display(){
 
-    setTimeout(alertdisplay,4000);
+    setTimeout(alertdisplay,3000);
 
 })
 

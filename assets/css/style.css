@@ -56,6 +56,10 @@ background-size: cover;
     letter-spacing: 1.2px;
 }
 
+.h-left .h-left-item .builds{
+    font-size: 1rem !important;
+}
+
 /* header right */
 .h-right a{
     color:rgb(182, 113, 143) ;
@@ -238,7 +242,7 @@ overflow-y: scroll;
 }
 
 .window-content{
-    background-image:url(../images/window3.jpg);
+    background-image:url(../images/checklist-02.png);
     background-size: cover;
     background-position: 50%;
     background-color: rgb(28, 29, 29);
@@ -298,8 +302,14 @@ overflow-y: scroll;
 }
 
 /* abt-left */
+.about{
+    margin-top:0 !important;
+
+}
+
 .about .abt-left{
-    padding: 20px 0;
+    padding: 0px 0;
+
 }
 
 .about .abt-left h2{
@@ -816,243 +826,6 @@ padding: 10px
     }
 
 }
-
-
-
-/* .team{
-}
-
-.team h2{
-    font-family: 'Lilita One', cursive;
-    color:rgb(90, 88, 88);
-    font-size: 2.7rem;
-    text-align: center;
-    padding: 60px 0 5px 0;
-}
-
-.team h3{
-    color:rgba(90, 88, 88, 0.642);  
-    margin: auto;  
-    width: 100%;
-    text-align: center;
-    font-size: 1.2rem;   
-}
-
-.team .team-item-top{
-    width: 40%;
-    padding: 20px;
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-    /* border-top-left-radius: 70px;
-    border-bottom-right-radius: 70px; */
-/* }
-
-.team .team-details .image-background{
-    background-color: rebeccapurple;
-    width: 70%;
-    height: 130%;
-    z-index: -1;
-    bottom: -20px;
-} */ 
-
-/* 
-.team .ceo .item-background{
-    position:absolute;
-    background-color: rgba(49, 191, 213, 0.064);
-    width: 100%;
-    height: 100%;
-    top: 25%;
-    right: 0;
-    z-index: -1;
-} */
-
-/* .team .contact{
-    position: absolute;
-    top: 38%;
-    left: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity .4s;
-}
-
-.team .team-item-top:hover .contact{
-    visibility: visible;
-    opacity:1;
-} 
-
-.team .team-item-top:hover{
-    visibility: visible;
-    opacity:1;
-    transform: scale(1.07);
-} */
-
-/* .team .ceo::after{
-    content: '';
-    position: absolute;
-    border-left: 5px solid rgb(49, 191, 213);
-    border-bottom: 5px solid rgb(49, 191, 213);
-    height: 114px;
-    width: 114px;
-    bottom: 0px;
-    left: 0px;
-}
-
-.team .ceo::before{
-    content: '';
-    position: absolute;
-    border-top: 5px solid rgb(49, 191, 213);
-    border-right: 5px solid rgb(49, 191, 213);
-    height: 114px;
-    width: 114px;
-    top: 0;
-    right: 0;
-} */
-
-/* .team .ceo .contact ul{
-    padding: 2px 0;
-    background: linear-gradient(0.25turn,rgba(122, 204, 217), rgb(55, 133, 145));
-}
-
-.team .ceo .contact ul i{
-    background-color:rgba(213, 209, 209, 0.6) ;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;color: white;
-}
-
-.team .coordinator::after{
-    content: '';
-    position: absolute;
-    border-left: 5px solid rgb(211, 83, 111);
-    border-bottom: 5px solid rgb(211, 83, 111);
-    height: 114px;
-    width: 114px;
-    bottom: 0px;
-    left: 0px;
-}
-
-.team .coordinator::before{
-    content: '';
-    position: absolute;
-    border-top: 5px solid rgb(211, 83, 111);
-    border-right: 5px solid rgb(211, 83, 111);
-    height: 114px;
-    width: 114px;
-    top: 0;
-    right: 0;
-}
-
-.team .coordinator .contact ul{
-    padding: 2px 0;
-    background: linear-gradient(0.25turn,rgba(229, 105, 132, 0.95), rgb(212, 50, 85));
-}
-
-.team .coordinator .contact ul i{
-    background-color:rgba(213, 209, 209, 0.6) ;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;color: white;
-} */
-
-/* .team .team-item-top img{
-    width: 65%;
-    border-radius:50%;
-    border: 4px solid rgba(90, 88, 88, 0.2);
-    background-color: white;
-}
-
-.team .ceo h4{
-    color:rgb(49, 191, 213);
-}
-
-.team .coordinator h4{
-    color:rgb(211, 83, 111);
-}
-
-.team .team-item-top p{
-    color: rgba(90, 88, 88, 0.642);
-    padding: 0 5px;
-}
-
-.team .supervisor::after{
-    content: '';
-    position: absolute;
-    border-left: 5px solid rgb(230, 173, 0);
-    border-bottom: 5px solid rgb(230, 173, 0);
-    height: 114px;
-    width: 114px;
-    bottom: 0px;
-    left: 0px;
-}
-
-.team .supervisor{
-    padding: 40px 20px 20px 20px;
-    overflow: hidden;
-    position: relative;
-}
-
-.team .supervisor::before{
-    content: '';
-    position: absolute;
-    border-top: 5px solid rgb(230, 173, 0);
-    border-right: 5px solid rgb(230, 173, 0);
-    height: 114px;
-    width: 114px;
-    top: 0;
-    right: 0;
-}
-
-.team .supervisor:hover .contact{
-    visibility: visible;
-    opacity:1;
-} 
-
-.team .supervisor:hover{
-    visibility: visible;
-    opacity:1;
-    transform: scale(1.07);
-}
-
-.team .employee .team-item{
-    padding: 40px 20px 20px 20px;
-    width: 18.3%;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-    border-top-left-radius: 70px;
-    border-bottom-right-radius: 70px;
-} */
-
-/* .team .supervisor img{
-    width: 50%;
-    border-radius:50%;
-    margin-bottom: 60px;
-    border: 4px solid rgba(90, 88, 88, 0.2);
-    background-color: white;
-}
-
-.team .supervisor h4{
-    color:rgb(230, 173, 0);
-}
-
-.team .supervisor p{
-    color: rgba(90, 88, 88, 0.642);
-    padding: 0 5px;
-}
-
-.team .supervisor .contact ul{
-    padding: 2px 0;
-    background: linear-gradient(0.25turn,rgb(249, 208, 83), rgb(230, 173, 0));
-}
-
-.team .supervisor .contact ul i{
-    background-color:rgba(213, 209, 209, 0.6) ;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;color: white;
-} */
-
 
 /* TEAM */
 
@@ -1735,11 +1508,10 @@ color:rgb(90, 88, 88);
 
   /* contact section */
 .regist{
-    background-image: url(../images/form\ bg2.jpg);
+    background-image: url(../images/Email-Marketing4-Facebook.png);
     background-blend-mode: overlay;
     background-size: cover;
-    background-position-y:90%;
-    background-color:#343a3c;
+    background-position-y:50%;
     z-index: 2; 
     overflow: hidden;
     height: 500px;
@@ -1775,7 +1547,7 @@ color:rgb(90, 88, 88);
 }
 
 .regist .submit:hover{
-    box-shadow: rgba(169, 167, 67, 0.303) 0px 20px 30px;    
+    box-shadow: rgba(255, 255, 255, 0.303) 0px 20px 30px;    
     border: 2px solid rgb(87, 84, 84);
 }
 
@@ -2137,3 +1909,182 @@ font-family: 'Lilita One', cursive;
     color:rgba(114, 111, 111, 0.75);
     font-weight: 500;
 }
+
+
+/* media query */
+@media (min-width:768px) and (max-width:992px){
+.all-bg{
+    padding-bottom: 50px;
+}
+.all-bg{
+    background-image: url(../images/bg_1.jpg.webp);
+    background-color: rgb(156 196 202);
+    background-size: cover;
+    background-position: 50%;
+    }
+
+.navbar .nav-right::after{
+    display: none;
+}
+
+.navbar .nav-right input{
+    visibility: hidden;
+}
+.navbar .nav-right .searchword:hover input{
+    visibility:visible;
+}
+
+.navbar .nav-right a{
+    font-size:1.3rem;
+
+}
+
+.window{
+    position: absolute;
+    top: 17%;
+    margin:0 30px ;
+}
+.about{
+    padding: 0px 0;
+}
+
+.about .abt-left{
+    padding: 0px 0;
+}
+
+.about .abt-left h2{
+    font-size: 1.6rem;
+ }
+
+.about .abt-left h3{
+    width: 80%;
+ }
+
+ .why .why-item{
+    width: 29%;
+    margin-bottom: 25px !important;
+}
+
+.in-numbers{
+    display:none
+}
+
+.team{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.team .team-item{
+    position:static;
+    padding-top: 0px;
+}
+
+.team .seemore{
+    margin-top: 70px;
+}
+
+.team .contact-team{
+    top: 120px;
+    right: 0px;
+    font-size: 1.8rem;
+}
+.team .team-item .team-item-icon{
+    visibility:hidden;
+}
+
+.team .team-item-desc{
+    padding-left: 0px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.courses .courses-desc{
+}
+
+.courses .courses-desc .courses-details{
+    width: 70%;
+    margin-left: 120px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.feedback{
+    margin-bottom: 150px;
+}
+
+.feedback .yr-fd{
+    left: 27px;
+    top: 87%;
+    width: 40%;
+
+}
+
+.feedback .improve{
+    right: 21px;
+    top: 87%;
+    width: 40%;
+
+}
+
+.footer{
+    margin:50px 30px 30px 15px;
+}
+
+.footer .container .f-item p{
+    width: 100%;
+    font-size: 1rem;
+}
+
+.footer .container .f-item img{
+    visibility: hidden;
+    }
+
+    .allcourses .content-left{
+        width:25%;
+    }
+
+    .allcourses .content-list{
+        margin-left:0 !important;
+        padding-left:0 !important;
+
+    }
+    .allcourses .content-left .content-item .change-co1{
+    margin-right: 5px;
+    padding-left: 5px;
+}
+
+.allcourses .webdesign .content-right-item{
+    width: 93%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.allcourses .graphicdesig .content-right-item{
+    width: 93%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.allcourses .marketing .content-right-item{
+    width: 93%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.allcourses .course-item-desc{
+
+    width:100%;
+    border-radius:0px 0px 20px 20px ;
+
+}
+
+.allcourses .padding-md{
+    padding-right: 20px;
+    padding-left: 20px;
+
+}
+.allcourses .padding-md p{
+    width:100%
+}
+
+}
+
+
