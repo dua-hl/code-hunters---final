@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project</title>
+    <title>code hunters</title>
     <link rel="stylesheet" href="vendor/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -20,9 +20,9 @@
       <div class="all-bg-window visually-hidden" id="all-bg-window"></div>
 
     <div class="header" id="header">
-        <div class="container pt-3 d-flex align-items-center px-lg-0 px-md-3">
-            <div class="h-left col-6 d-flex">
-                <a href="#" class="col-lg-1 col-md-2">
+        <div class="container pt-3 d-lg-flex d-md-flex align-items-center px-lg-0 px-md-3">
+            <div class="h-left col-lg-6 col-md-6 d-flex">
+                <a href="#" class="col-lg-1 col-md-2 h-w-20">
                     <img src="assets/images/logo.png" alt="logo" class="rounded-pill">
                 </a>
                 <div class="h-left-item pt-2">
@@ -31,8 +31,8 @@
                 </div>
             </div>
 
-            <div class="h-right col-6">
-                <ul class="nav justify-content-end gap-2 animate__bounceInRight animate__animated">
+            <div class="h-right col-lg-6 col-md-6">
+                <ul class="nav justify-content-center justify-content-lg-end justify-content-md-end gap-2 animate__bounceInRight animate__animated">
                     <li class="nav-item">
                       <a target="blank" class="d-flex justify-content-center align-items-center" aria-current="page" href="https://www.facebook.com/eknowledge.learn/">
                         <i class="fa-brands fa-facebook-f"></i>
@@ -49,6 +49,7 @@
                       </li>
                 </ul>
             </div>
+
         </div>
 
     </div>
@@ -56,23 +57,23 @@
 
 
     <!-- navbar section -->
-    <nav class="navbar navbar-expand-lg my-4 my-md-5" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-expand-md my-4 my-md-5" id="navbar">
         <div class="container ps-md-3 pe-md-5">
 
-          <div class="collapse navbar-collapse py-2 d-flex justify-content-center" id="navbarSupportedContent">
-            <div class="nav-left col-10">
-            <ul class="d-flex flex-row navbar-nav me-auto mb-2 mb-lg-0 gap-3 ps-4 animate__animated animate__fadeIn">
+          <div class="collapse navbar-collapse py-2 d-flex justify-content-center">
+            <div class="nav-left col-lg-10 col-md-10" id="navbarNav">
+            <ul class="d-flex flex-row navbar-nav me-auto mb-2 mb-lg-0 gap-lg-3 ps-lg-4 animate__animated animate__fadeIn">
               <li class="nav-item px-3">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item dropdown p-relative px-3">
-                <a class="nav-link dropdown-toggle drop" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle drop" href="./allcourses/allcourses.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   All Courses
                 </a>
                 <ul class="dropdownmenu">
-                  <li><a href="./webdesign/webdesign.html">Web Design</a></li>
-                  <li><a href="./graphic design/graphicdesign.html">Graphic Design</a></li>
-                  <li><a href="./marketing/marketing.html">Marketing</a></li>
+                  <li><a href="./webdesign/webdesign.html">* Web Design</a></li>
+                  <li><a href="./graphic design/graphicdesign.html">* Graphic Design</a></li>
+                  <li><a href="./marketing/marketing.html">* Marketing</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown px-3">
@@ -80,9 +81,9 @@
                   About Us
                 </a>
                     <ul class="dropdownmenu">
-                        <li><a class="dropdown-item about-item" href="#" >Our Start</a></li>
-                        <li><a class="dropdown-item about-item" href="#">Our concept</a></li>
-                        <li><a class="dropdown-item about-item" href="#">Our vision</a></li>
+                        <li><a class="dropdown-item about-item" href="#" >* Our Start</a></li>
+                        <li><a class="dropdown-item about-item" href="#">* Our concept</a></li>
+                        <li><a class="dropdown-item about-item" href="#">* Our vision</a></li>
                     </ul>
               </li>
               <li class="nav-item px-3">
@@ -95,7 +96,7 @@
               </li>
             </ul>
             </div>
-
+          
             <div class="nav-right col-2 text-end">
             <form role="search" class="d-flex position-relative">
                 <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search" id="searchinput">
@@ -125,7 +126,7 @@
     <!-- navbar secondary -->
     <div class="window">
 
-      <div class="window-content px-5 py-4 visually-hidden" id="window-start" >
+      <div class="window-content px-lg-5 px-md-5 py-4 visually-hidden" id="window-start" >
           <div class=" text-white window-content-top">
               <h1 class="border-bottom text-white pb-4 text-center">Our Start</h1>
               <div class="pt-3 pb-2">
@@ -141,11 +142,11 @@
           </div>
       </div>
 
-      <div class="window-content px-5 py-4 visually-hidden" id="window-start" >
+      <div class="window-content px-lg-5 px-md-5 py-4 visually-hidden" id="window-start" >
         <div class=" text-white window-content-top">
             <h1 class="border-bottom text-white pb-4 text-center">Our Concept</h1>
-            <div class="pt-3 pb-2">
-              <p class="p-5">Knowledge Academy gives the oportunity for any person to learn coding with our proffional team.
+            <div class="pt-3">
+              <p>Knowledge Academy gives the oportunity for any person to learn coding with our proffional team.
                 We want to create a world where anyone can build something meaningful with technology, and everyone has the learning tools, resources, and opportunities to do so. Code contains a world of possibilities — all that’s required is the curiosity and drive to learn. At knowledge academy, we are committed to empowering all people, regardless of where they are in their coding journeys, to continue to learn, grow, and make an impact on the world around them.</p>
           </div>   
         </div>     
@@ -154,7 +155,7 @@
         </div>
     </div>
 
-    <div class="window-content px-5 py-4 visually-hidden" id="window-start" >
+    <div class="window-content px-lg-5 px-md-5 py-4 visually-hidden" id="window-start" >
       <div class=" text-white window-content-top">
           <h1 class="border-bottom text-white pb-4 text-center">Our Vision</h1>
           <div class="pt-3 pb-2">
@@ -176,7 +177,7 @@
     <!-- about section -->
     <div class="about">
         <div class="container d-flex">
-            <div class="abt-left col-lg-6 col-md-9 ps-5">
+            <div class="abt-left col-lg-6 col-md-9 ps-lg-5 ps-md-5">
                 <h2 class="text-capitalize tittle text-white pb-2 searchContent">Limitless learning at your fingerprints</h2>
                 <h3 class="py-2 searchContent">Knowlege academy provides a range of online training workshops and courses. It's not about codes! We're sharing with you years of experience.</h3>
                 <div class="d-flex gap-4 py-4 animate__bounceInLeft animate__animated">
@@ -203,7 +204,7 @@
                 <h3 class="searchContent">We take a steps to build a successful programmers</h3>
             </div> 
             <div class="why-bottom">
-            <ul class="pt-3 d-flex flex-wrap justify-content-around">
+            <ul class="pt-3 d-flex flex-wrap justify-content-lg-around justify-content-md-around">
                 <li class="why-item col-lg-2 col-md-4">
                     <div class="h-50">
                         <img src="assets/images/training.png" alt="">
@@ -397,7 +398,7 @@
               <a href="https://wa.me/+962796388393"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             <div class="team-item-image">
-              <img src="assets/images/boy-icon.png" alt="tariq" class="w-100 p-2">
+              <img src="assets/images/boy-icon.png" alt="tariq" class="">
             </div>
             <div class="team-item-desc">
               <h4>Ahmad Alsakhen</h4>
@@ -1309,7 +1310,7 @@
   <div class="container">
 
         <div class="row justify-content-end ">
-      <div class="col-md-6 py-5 px-md-5 mb-5">       
+      <div class="col-md-6 py-5 px-md-5 mb-lg-5">       
       <div class="heading text-white">
       <h2 class=" searchContent">Keep in touch <span class="ps-2"><svg width="35px" height="35px" viewBox="0 0 24 24" id="meteor-icon-kit__regular-smile-beam" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM6.05132 15.3162C5.87667 14.7923 6.15983 14.226 6.68377 14.0513C7.20772 13.8767 7.77404 14.1598 7.94868 14.6838C8.02839 14.9229 8.26749 15.3533 8.70711 15.7929C9.46008 16.5459 10.5197 17 12 17C13.4803 17 14.5399 16.5459 15.2929 15.7929C15.7325 15.3533 15.9716 14.9229 16.0513 14.6838C16.226 14.1598 16.7923 13.8767 17.3162 14.0513C17.8402 14.226 18.1233 14.7923 17.9487 15.3162C17.7784 15.8271 17.3925 16.5217 16.7071 17.2071C15.5851 18.3291 14.0197 19 12 19C9.98027 19 8.41492 18.3291 7.29289 17.2071C6.60751 16.5217 6.22161 15.8271 6.05132 15.3162ZM7.5547 9.83205C7.09517 10.1384 6.4743 10.0142 6.16795 9.5547C5.8616 9.09517 5.98577 8.4743 6.4453 8.16795L6.8359 7.90755C7.8436 7.23575 9.1564 7.23575 10.1641 7.90755L10.5547 8.16795C11.0142 8.4743 11.1384 9.09517 10.8321 9.5547C10.5257 10.0142 9.90483 10.1384 9.4453 9.83205L9.0547 9.57165C8.7188 9.34772 8.2812 9.34772 7.9453 9.57165L7.5547 9.83205ZM14.5547 9.83205C14.0952 10.1384 13.4743 10.0142 13.1679 9.5547C12.8616 9.09517 12.9858 8.4743 13.4453 8.16795L13.8359 7.90755C14.8436 7.23575 16.1564 7.23575 17.1641 7.90755L17.5547 8.16795C18.0142 8.4743 18.1384 9.09517 17.8321 9.5547C17.5257 10.0142 16.9048 10.1384 16.4453 9.83205L16.0547 9.57165C15.7188 9.34772 15.2812 9.34772 14.9453 9.57165L14.5547 9.83205Z" fill="#ffffff"></path></g></svg></span></h2>
       <p class="searchContent">Enter your information to know our latest updates! </p>
@@ -1343,7 +1344,7 @@
             <span class="valid-feedback"> Accepted!</span>
             <span class="invalid-feedback"> Sorry, number must have 8 digits at least</span>
             </div>
-            <div class="text-center">
+            <div class="text-center mt-md-3">
                 <input type="submit" class="submit btn-primary px-4 py-2 rounded-5 w-75" id="btn" onclick="clearInputs()">
             </div>
           </div>
