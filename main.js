@@ -11,7 +11,7 @@ function navbarDisplayF(){
       <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
     </li>
 
-    <li class="m-auto col-md-9 text-center">
+    <li class="nav-item2 m-auto col-md-9 text-center">
       <h2 id="titelofnav">All Courses</h2>
     </li>
   </ul>

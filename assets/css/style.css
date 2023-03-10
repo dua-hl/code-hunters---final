@@ -1919,12 +1919,34 @@ font-family: 'Lilita One', cursive;
 .all-bg{
     padding-bottom: 50px;
 }
+
 .all-bg{
     background-image: url(../images/bg_1.jpg.webp);
     background-color: rgb(156 196 202);
     background-size: cover;
     background-position: 50%;
     }
+
+    .h-right a{
+        color:rgb(182, 113, 143) ;
+        background-color:rgba(255, 255, 255, 0.9);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.3rem;
+    }
+    
+    .h-right a:hover{
+        background-color:rgb(182, 113, 143) ;
+        transition: .5s;
+    }
+    
+    .h-right a:hover i{
+        color: white;
+        transform: rotate(360deg);
+        transition: 1s;
+    }
+
 
 .navbar .nav-right::after{
     display: none;
@@ -2472,25 +2494,51 @@ font-family: 'Lilita One', cursive;
         display: inline-block;
     }
             
+    .allcourses .navbar .nav-left{
+        width:68% !important;
+    }
 
+    .allcourses .nav-item a{
+    font-size: 1.2rem;
+    }
+
+    .allcourses .nav-item{
+        padding-top: 0px;
+    }
+
+    .allcourses .nav-item2 {
+    padding-top: 5px;
+    }
+
+    .allcourses .navbar .nav-right a{
+        font-size: 1.2rem;
+    }
+
+.allcourses .content .content-small{
+    background-color:black !important;
+}
+
+    .allcourses .content-left{
+        border-right:none;
+        /* background-color: red; */
+        /* width:100%; */
+    }
+
+    .allcourses .content .slide{
+        /* background-color:blue !important; */
+        /* width: 100%; */
+    }
     
 
 
-
-
-
-        .allcourses .content-left{
-            width:25%;
-        }
-    
         .allcourses .content-list{
             margin-left:0 !important;
             padding-left:0 !important;
     
         }
         .allcourses .content-left .content-item .change-co1{
-        margin-right: 5px;
-        padding-left: 5px;
+        margin-right: 0px;
+        padding-left: 0px;
     }
     
     .allcourses .webdesign .content-right-item{
